@@ -1,0 +1,421 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 2em auto;
+}
+h2 {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/*==== Nav Bar: Home ====*/
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #303030;
+  padding: 0 6em;
+  margin-bottom: 2em;
+}
+
+.nav-bar ul li {
+  padding: 2%;
+  color: white;
+  font-size: 1.15em;
+}
+
+.nav-bar ul li:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+/*==== Content: Home ====*/
+.main {
+  padding: 3em;
+  text-align: center;
+  height: 60vh;
+}
+.home {
+  width: 50%;
+  margin: 0 auto;
+
+}
+footer {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 2em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.soc-btn-container ul li, .info-container ul  li {
+  display: inline-block;
+}
+.soc-btn-container, .info-container {
+  text-align: center;
+}
+.soc-btn, .contact-btn {
+  box-shadow: 2px 1px rgba(0, 0, 0, 0.5);
+  border: 0.1em solid #303030;
+  padding: 1em;
+}
+.soc-btn {
+background-color: pink;
+border-radius: 50%;
+margin-bottom: 2em;
+}
+.contact-btn {
+  background-color: lightblue;
+  border-radius: 5%;
+}
+.contact-btn a {
+  color: #303030;
+  text-decoration: none;
+}
+.soc-btn:hover, .contact-btn:hover {
+  transform: translate(-2%, -2%);
+}
+
+/*==== General/Reusable Buttons & Photo Styling ====*/
+.sign-btn, .cancel-btn, .c-btn, .s-btn, .contact-btn {
+  cursor: pointer;
+  font-weight: bold;
+}
+.sign-btn:hover, .cancel-btn:hover, .contact-btn:hover, .soc-btn:hover, .note-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.round-pic {
+  border-radius: 50%;
+  height: 40%;
+  display: block;
+  margin: 2% auto;
+}
+
+
+/*===== Login/SignUp Modal Styling: Forms, Modal Buttons ========*/
+.login-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4em;
+
+}
+.modal-box {
+  background-color: lightblue;
+  height: 80%;
+  width: 60%;
+  top: 40%;
+  left: 30%;
+  transform: translateY(20%);
+  margin: 0 auto;
+  padding: 4em;
+}
+.sign-btn {
+  width: 100%;
+  padding: 1em;
+  background-color: #248f8f;
+}
+.cancel-btn {
+  padding: 1.15em 1.5em;
+  background-color: darkred;
+}
+
+/*==== Forms ====*/
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding:  1.5em 2em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type=checkbox] {
+  display: inline-block;
+  margin: 0.5em 1em;
+}
+.checkbox {
+margin: 1em;
+}
+fieldset {
+  padding: 1em;
+  text-align: center;
+}
+fieldset > span {
+  margin-left: 50%;
+}
+
+/*===== Demo Modal Styling: Writing Console, Panels, Panel Buttons, Tool Tips. ========*/
+.demo-modal {
+  display: none;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background: lightblue url('./img/fog.jpg') no-repeat scroll center/cover;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.movable-writer-station {
+  display: flex;
+  justify-content: center;
+}
+
+/*==== Writing Console Styling ====*/
+.writer-console-container {
+  background-color: transparent;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  min-width: 900px;
+  width: 100%;
+  padding: 8px;
+}
+
+.writer-station-input {
+  display: block;
+  margin: 0 auto;
+  cursor: move;
+  padding: 2px;
+}
+
+textarea {
+  min-width: 850px;
+  min-height: 600px;
+  max-height: 90vh;
+  max-width: 1800px;
+  padding: 20px;
+  background-color: transparent;
+  border: 1px dashed transparent;
+  text-indent: 2em;
+}
+.word-count {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin: 2% auto;
+  width: 80px;
+  padding: 8px;
+  opacity: 0;
+}
+/*==== Writing Console Effects ====*/
+.writer-console-container:hover .writer-station-input > .word-count {
+  opacity: 1;
+  animation-fill-mode: none;
+}
+.writer-console-container:hover .writer-station-input > textarea {
+  border: 1px dashed black;
+  animation-fill-mode: none;
+}
+
+
+/*======== PANEL STYLING ========*/
+.panel {
+  background-color: transparent;
+  height: 100%;
+  display: inherit;
+  padding: 60px 10px;
+}
+.panel:hover {
+  opacity: 1;
+  animation-fill-mode: none;
+}
+
+/*---- Left Panel -----*/
+.left {
+  min-width: 180px;
+}
+.panel-links {
+  text-align: center;
+}
+.panel-links a {
+  display: block;
+  padding: 3px;
+  text-decoration: none;
+  color: #666666;
+}
+.panel-links a:hover {
+  font-weight: bold;
+  color: #303030;
+  cursor: pointer;
+}
+
+/*---- Right Panel ----*/
+.right {
+  min-width: 210px;
+}
+
+/* Right Panel Effects */
+.options > .c-btn:not(:first-child) {
+opacity: 0;
+}
+.options > .s-btn:not(:first-child) {
+opacity: 0;
+}
+.options:hover :not(:first-child) {
+opacity: 1;
+}
+
+/* Console Buttons */
+.c-btn {
+  margin: 5px 3px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #303030;
+  color: white;
+  fill: white;
+  cursor: pointer;
+}
+.c-btn + .c-btn {
+  background-color: #666666;
+}
+.c-btn + .c-btn:hover {
+  background-color: #303030;
+}
+/* Save & Share Buttons */
+.s-btn {
+  background-color: #248f8f;
+  color: white;
+  fill: white;
+  margin: 2% 1%;
+  padding: 4%;
+  border: none;
+  cursor: pointer;
+}
+.s-btn + .s-btn {
+  background-color: rgba(36, 143, 143, 0.6);
+}
+.s-btn + .s-btn:hover {
+  background-color: #248f8f;
+}
+.sh1, .sh2, .sh3, .sh4 {
+
+}
+
+/* Indivudual Background Buttons */
+#bg2, #bg3, #bg4, #bg5 {
+  border: 0.6em solid #666666;
+  background-color: #f2f2f2;
+  background-blend-mode: overlay;
+}
+#bg2:hover, #bg3:hover, #bg4:hover, #bg5:hover {
+  border: 0.6em solid #303030;
+  background-color: none;
+  background-blend-mode: none;
+}
+#bg1 {
+  background: url('../img/fog.jpg') center/cover no-repeat;
+  border: 0.6em solid #303030;
+}
+#bg2 {background: url('../img/ocean.jpg') center/cover no-repeat;}
+#bg3 {background: url('../img/sunset.jpg') center/cover no-repeat;}
+#bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
+#bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
+
+/* Other Units in Demo Modal */
+.spotify, .timer {
+  border: 1px dotted black;
+  margin: 12% auto;
+}
+.note-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  padding: 0.7em;
+  border-radius: 15%;
+  background-color: #303030;
+  color: #f2f2f2;
+  opacity: 0.04;
+}
+.note-btn a {
+  color: #f2f2f2;
+}
+.note-btn:hover, .note-btn:focus {
+opacity: 1;
+}
+
+.close-btn {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  width: 2%;
+  height: 3%;
+  padding: 0.5em 0.2em;
+  text-align: center;
+  border-radius: 25%;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Tool Tips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  position: absolute;
+  opacity: 0;
+  width: 150px;
+  top: 100%;
+  left: 20%;
+  font-size: 0.8em;
+  margin-left: -50px;
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 102;
+}
+ .p-tooltip .tooltiptext{
+  position: relative;
+  opacity: 0;
+  width: 150px;
+  font-size: 0.8em;
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 102;
+}
+.panel-links:hover .tooltiptext, .tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+.tooltip .tooltiptext::before, .p-tooltip .tooltiptext::before {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* This will position the arrow at the top of the tooltip */
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #303030 transparent; /* This will make the top border black */
+}
