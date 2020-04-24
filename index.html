@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./style.css" type="text/css" />
+
   <title>Writers App</title>
   </head>
 
@@ -96,11 +97,11 @@
         <aside>
           <div class="right panel">
             <div class="options">
-              <input id="ltr1" class="c-btn" type="button" value="F" />
-              <input id="ltr2" class="c-btn" type="button" value="F" />
-              <input id="ltr3" class="c-btn" type="button" value="F" />
-              <input id="ltr4" class="c-btn" type="button" value="F" />
-              <input id="ltr5" class="c-btn" type="button" value="F" />
+              <input id="ltr1" class="c-btn ltr" type="button" value="F" />
+              <input id="ltr2" class="c-btn ltr" type="button" value="F" />
+              <input id="ltr3" class="c-btn ltr" type="button" value="F" />
+              <input id="ltr4" class="c-btn ltr" type="button" value="F" />
+              <input id="ltr5" class="c-btn ltr" type="button" value="F" />
             </div>
             <div class="options">
               <input id="sz" class="c-btn" type="button" value="00" />
@@ -117,29 +118,51 @@
               <input id="bg5" class="c-btn bg" type="button" />
             </div>
             <div class="options">
-              <input id="mu" class="c-btn" type="button" value="M" />
+              <input id="play" class="c-btn" type="button" value=">" />
+              <input id="pause" class="c-btn" type="button" value="||" />
               <input id="mu1" class="c-btn" type="button" value="1" />
               <input id="mu2" class="c-btn" type="button" value="2" />
               <input id="mu3" class="c-btn" type="button" value="3" />
               <input id="mu4" class="c-btn" type="button" value="4" />
             </div>
-            <div class="options">
-              <input id="type0" class="c-btn" type="button" value="::::" />
-              <input id="type1" class="c-btn" type="button" value="1" />
-              <input id="type2" class="c-btn" type="button" value="2" />
-              <input id="type3" class="c-btn" type="button" value="3" />
-              <input id="type4" class="c-btn" type="button" value="4" />
-            </div>
-            <div class="spotify" id="spotify">
+            <!-- Audio Source files for music sounds -->
+                <div class="audio-source">
+                  <audio id="controls1" controls loop>
+                     <source id="music1" src="./audio/Akeboshi - Wind.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <audio id="controls2" controls>
+                     <source src="./audio/Akeboshi - Yellow Moon.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <audio id="controls3" controls>
+                     <source src="./audio/Aluto - Michi To You All.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <audio id="controls4" controls>
+                     <source src="./audio/Chaba - Parade.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+            <div class="spotify" id="spotifyContainer">
               <p>Spotify Api Here for user's own music</p>
+              <button id="spotifyPlayer">Play Spotify</button>
             </div>
-            <div class="timer" id="timer">
-              <p>Timer Component</p>
-            </div>
+            <div class="timer" id="timer-container">
+              <p>Timer</p>
+              <div class="countdown" id="countdown"></div>
+              <input type="number" id="minutesInput" placeholder="Minutes">
+              <input type="number" id="secondsInput" placeholder="Seconds">
+                <div class="timer-btn-container">
+                  <button id="timerStartBtn" class="timer-btn" value="1">Start</button>
+                  <button id="timerPResumeBtn" class="timer-btn" value="1">Resume</button>
+                  <button id="timerStopBtn" class="timer-btn" value="0">Stop</button>
+                </div>
+              </div>
             <div class="options">
-              <input id="sv1" class="s-btn" type="button" value="Save" />
+              <input id="sv1" onclick="download('Writer_File')" class="s-btn" type="button" value="Save" />
               <input id="sv2" class="s-btn" type="button" value="Save As" />
-              <input id="sv3" class="s-btn" type="button" value="Download" />
+              <input id="sv3" onclick="pdf()" class="s-btn" type="button" value="Download" />
             </div>
             <div class="tooltip">
               <div class="options">
@@ -162,8 +185,6 @@
         </div>
     </div>
 </section>
-
-
 
 <!-------- LOGIN CONTENT -------------------------------------------------------------->
     <section>
@@ -195,4 +216,5 @@
     </section>
 
 <script src="./script.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="https://sdk.scdn.co/spotify-player.js"></script>-->
   </body>

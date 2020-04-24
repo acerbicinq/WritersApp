@@ -1,5 +1,51 @@
+/*==== Custom Fonts ====*/
+@font-face {
+    font-family: 'darkwomanregular';
+    src: url('./fonts/darkwoman-webfont.woff2') format('woff2'),
+         url('./fonts/darkwoman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by tudy1311 on 1001fonts.com */
+}
+@font-face {
+    font-family: 'pistararegular';
+    src: url('./fonts/pistara-webfont.woff2') format('woff2'),
+         url('./fonts/pistara-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by skomii on 1001fonts.com */
+}
+@font-face {
+    font-family: 'libre_caslon_displayregular';
+    src: url('./fonts/librecaslondisplay-regular-webfont.woff2') format('woff2'),
+         url('./fonts/librecaslondisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Impallari Type on 1001fonts.com */
+}
+@font-face {
+    font-family: 'nimbus_monoregular';
+    src: url('./fonts/nimbusmono-regular-webfont.woff2') format('woff2'),
+         url('./fonts/nimbusmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by URW++ on 1001fonts.com */
+}
+@font-face {
+    font-family: 'montezregular';
+    src: url('./fonts/montez-regular-webfont.woff2') format('woff2'),
+         url('./fonts/montez-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Astigmatic One Eye Typographic Institute on 1001fonts.com */
+}
+
+
+
+/*==== General Styling ====*/
 html {
   box-sizing: border-box;
+
 }
 
 *, *::before, *::after {
@@ -11,6 +57,7 @@ html {
 h1 {
   text-align: center;
   margin: 2em auto;
+
 }
 h2 {
   text-align: center;
@@ -205,7 +252,7 @@ textarea {
   padding: 20px;
   background-color: transparent;
   border: 1px dashed transparent;
-  text-indent: 2em;
+  font-family: "libre_caslon_displayregular";
 }
 .word-count {
   border-top: 1px solid black;
@@ -273,19 +320,20 @@ opacity: 0;
 .options:hover :not(:first-child) {
 opacity: 1;
 }
-
 /* Console Buttons */
 .c-btn {
   margin: 5px 3px;
   padding: 8px;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 33.5px;
+  height: 33.5px;
   background-color: #303030;
   color: white;
   fill: white;
   cursor: pointer;
+  font-size: 10px;
+  text-align: center;
 }
 .c-btn + .c-btn {
   background-color: #666666;
@@ -321,8 +369,6 @@ opacity: 1;
 }
 #bg2:hover, #bg3:hover, #bg4:hover, #bg5:hover {
   border: 0.6em solid #303030;
-  background-color: none;
-  background-blend-mode: none;
 }
 #bg1 {
   background: url('../img/fog.jpg') center/cover no-repeat;
@@ -332,6 +378,26 @@ opacity: 1;
 #bg3 {background: url('../img/sunset.jpg') center/cover no-repeat;}
 #bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
 #bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
+
+
+/* Indivudual Font Buttons */
+#ltr1, #ltr2, #ltr3, #ltr4, #ltr5 {
+text-align: center;
+}
+#ltr1 {font-family: "libre_caslon_displayregular";}
+#ltr2 {font-family: "pistararegular";}
+#ltr3 {font-family: "nimbus_monoregular";}
+#ltr4 {font-family: "alluraregular";}
+#ltr5 {font-family: "darkwomanregular";}
+
+/* Indivudual Font Buttons */
+#pause, #controls1, #controls2, #controls3, #controls4 {
+  display: none;
+  opacity: 1;
+  background-color: #303030;
+}
+
+
 
 /* Other Units in Demo Modal */
 .spotify, .timer {
