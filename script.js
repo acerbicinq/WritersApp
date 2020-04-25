@@ -4,9 +4,9 @@
 // 3. Font Size Incrementing
 // 4. Font Styling
 // 5. Local Music Play/Display Functionality
-// 6. Spotify API
-// 7. Timer API
-// 8. Word Counter Functionality
+// 6. Timer API
+// 7. Word Counter Functionality
+// 8.
 
 // ?. Save Option Functionality
 // ?. Share Option Functionality
@@ -189,46 +189,9 @@ musicBtn4.onclick = () => {
   }
 }
 
-/*/ 6666666
-// 6. Spotiy Web SDK
-const playSpotify = document.getElementById('spotifyPlayer');
 
-window.onSpotifyWebPlaybackSDKReady = () => {
-  const token = 'BQDOE32j19X9vUe8QDmD5pYSaDGfi-lh-rOfGa96BbeUdeEcJgVEOsQVKqkPn7XVHIKA0-oNg5A9Q5vvvL1O_F0ekenoDWCd6H7PQpmN5ACc4z_3hYiatSKt67sxephF5nLy0wqLPDUwt1-ftAXmP5_X1p0Os6DdbRgwUU-h2Z3ZCbW7d8NA18I';
-  const player = new Spotify.Player({
-    name: 'Writer\'s App Session',
-    getOAuthToken: cb => { cb(token); }
-  });
-  // Error handling
-  player.addListener('initialization_error', ({ message }) => { console.error(message); });
-  player.addListener('authentication_error', ({ message }) => { console.error(message); });
-  player.addListener('account_error', ({ message }) => { console.error(message); });
-  player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-  // Playback status updates
-  player.addListener('player_state_changed', state => { console.log(state); });
-
-  // Ready
-  player.addListener('ready', ({ device_id }) => {
-    console.log('Ready with Device ID', device_id);
-  });
-
-  // Not Ready
-  player.addListener('not_ready', ({ device_id }) => {
-    console.log('Device ID has gone offline', device_id);
-  });
-
-  // Connect to the player!
-  player.connect().then(success => {
-  if (success) {
-    console.log('The Web Playback SDK successfully connected to Spotify!');
-  }
-});
-};
-*/
-
-// 777777777
-// 7. Timer!
+// 6666666
+// 6. Timer!
 const countdown = document.getElementById('countdown');
 const minutesInput = document.getElementById('minutesInput');
 const secondsInput = document.getElementById('secondsInput');
@@ -237,10 +200,15 @@ const timerResumeBtn = document.getElementById('timerResumeBtn');
 const timerStopBtn = document.getElementById('timerStopBtn');
 
 
+const minutes = minutesInput.onchange = (e) => {
+  return e.target.value;
+}
+const seconds = secondsInput.onchange = (e) => {
+  return e.target.value;
+}
 
-
-const minutes = minutesInput.onchange(() => minutesInput.value);
-const seconds = secondsInput.onchange(() => secondsInput.value);
+//const minutes = minutesInput.onchange(() => minutesInput.value);
+//const seconds = secondsInput.onchange(() => secondsInput.value);
 
 
 timerStartBtn.onclick = () => {
