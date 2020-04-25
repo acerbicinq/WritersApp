@@ -155,10 +155,16 @@
               <input type="number" id="secondsInput" placeholder="Seconds">
                 <div class="timer-btn-container">
                   <button id="timerStartBtn" class="timer-btn" value="1">Start</button>
-                  <button id="timerPResumeBtn" class="timer-btn" value="1">Resume</button>
-                  <button id="timerStopBtn" class="timer-btn" value="0">Stop</button>
+                  <button id="timerPauseBtn" class="timer-btn" value="1">Pause</button>
+                  <button id="timerResumeBtn" class="timer-btn" value="1">Resume</button>
+                  <button id="timerStopBtn" class="timer-btn" value="0">Stop & Clear</button>
                 </div>
+                <audio id="timer-sound" controls>
+                   <source src="./audio/Out of Time.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
+      <!---SAVE OPTIONS ---->
             <div class="options">
               <input id="sv1" onclick="download('Writer_File')" class="s-btn" type="button" value="Save" />
               <input id="sv2" class="s-btn" type="button" value="Save As" />
@@ -186,7 +192,7 @@
     </div>
 </section>
 
-<!-------- LOGIN CONTENT -------------------------------------------------------------->
+<!--- LOGIN CONTENT -------------------------------------------------------------->
     <section>
       <div id="login" class="login-modal">
         <div class="modal-box">
