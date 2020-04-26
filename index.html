@@ -56,12 +56,12 @@
       </div>
     </footer>
 
-<!-- ------------------------------------------------- MODAL CONTENT ----------------------------------------------------->
-<!-- ---------------------------------------------Demo modal, and Login modal ----------------------------------------------------->
-<!-- ------------------------------------------------- MODAL CONTENT ----------------------------------------------------->
+<!--  MODAL CONTENT ----------------------------------------------------->
+<!-- Demo modal, and Login modal ----------------------------------------------------->
+<!--  MODAL CONTENT ----------------------------------------------------->
 
 
-  <!-- ------ DEMO CONTENT -------------------------------------------------------------->
+  <!--  DEMO CONTENT -------------------------------------------------------------->
   <section>
     <div id="demo" class="demo-modal">
       <div class="movable-writer-station">
@@ -88,7 +88,10 @@
               <div class="writer-station-input">
                   <textarea id="console-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                   <div class="word-count">
-                      342
+                      <p id="wordCount">0</p>
+                      <p id="characterCount">0</p>
+                      <button id="show-word-count" type="button">Keep visible?</button>
+                      <button id="hide-word-count" type="button">Hide?</button>
                   </div>
               </div>
 
@@ -144,10 +147,6 @@
                     Your browser does not support the audio element.
                   </audio>
                 </div>
-            <div class="spotify" id="spotifyContainer">
-              <p>Spotify Api Here for user's own music</p>
-              <button id="spotifyPlayer">Check Minutes</button>
-            </div>
             <div class="timer" id="timer-container">
               <div class="countdown" id="countdown">Timer</div>
               <input type="number" id="minutesInput" placeholder="Minutes">

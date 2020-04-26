@@ -240,7 +240,6 @@ fieldset > span {
 .writer-station-input {
   display: block;
   margin: 0 auto;
-  cursor: move;
   padding: 2px;
 }
 
@@ -255,22 +254,38 @@ textarea {
   font-family: "libre_caslon_displayregular";
 }
 .word-count {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   text-align: center;
   margin: 2% auto;
   width: 80px;
-  padding: 8px;
   opacity: 0;
+}
+
+.word-count p {
+  border-top: 0.1em solid black;
+  border-bottom: 0.1em solid black;
+  padding: 1em;
+}
+
+#characterCount {
+  display: none;
+}
+#show-word-count, #hide-word-count {
+  border: 0.1em solid black;
+  color: black;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.3em;
+}
+
+#hide-word-count {
+  display: none;
 }
 /*==== Writing Console Effects ====*/
 .writer-console-container:hover .writer-station-input > .word-count {
   opacity: 1;
-  animation-fill-mode: none;
 }
 .writer-console-container:hover .writer-station-input > textarea {
   border: 1px dashed black;
-  animation-fill-mode: none;
 }
 
 
@@ -280,10 +295,10 @@ textarea {
   height: 100%;
   display: inherit;
   padding: 60px 10px;
+  opacity: 0;
 }
 .panel:hover {
   opacity: 1;
-  animation-fill-mode: none;
 }
 
 /*---- Left Panel -----*/
@@ -308,6 +323,11 @@ textarea {
 /*---- Right Panel ----*/
 .right {
   min-width: 210px;
+}
+
+/* Panel Timer */
+#timerResumeBtn, #timerPauseBtn, #timer-sound {
+  display: none;
 }
 
 /* Right Panel Effects */
@@ -400,10 +420,6 @@ text-align: center;
 
 
 /* Other Units in Demo Modal */
-.spotify, .timer {
-  border: 1px dotted black;
-  margin: 12% auto;
-}
 .note-btn {
   position: fixed;
   right: 20px;

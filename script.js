@@ -5,11 +5,11 @@
 // 4. Font Styling
 // 5. Local Music Play/Display Functionality
 // 6. Timer Functionality
-// 7. Word Counter Functionality
-// 8.
+// 7. Word & Character Counter Functionality
+// 8. Console Display/Hide Animations with setTimeOut & Event Handlers
 
 // ?. Save Option Functionality
-// ?. Share Option Functionality
+// ?. Move/Rezise Text Area
 // ?. Notes on Implementing Accessibility Functionality with for() loops.
 
 
@@ -33,7 +33,11 @@ window.onclick = function(e) {
 }
 
 //Demo Modal Functionality
-openDemoModal.onclick = () => demoModal.style.display = "block";
+const textarea = document.getElementById('console-text');
+openDemoModal.onclick = () => {
+  demoModal.style.display = "block";
+  textarea.focus();
+};
 closeButton.onclick = () => demoModal.style.display = "none";
 
 // 2222222222
@@ -51,8 +55,6 @@ bgBtn2.onclick = () => {
 }
 bgBtn3.onclick = () => demoModal.style.background = "url('./img/sunset.jpg') no-repeat scroll center/cover";
 
-
-
 bgBtn4.onclick = () => {
   demoModal.style.background = "rgba(0, 0, 0, 0.7) url('./img/night.jpg') no-repeat scroll center/cover";
   demoModal.style.backgroundBlendMode = "multiply";
@@ -65,8 +67,6 @@ bgBtn5.onclick = () => {
 
 // 3333333333
 // 3. Font Size Incrementing
-const textarea = document.getElementById('console-text');
-
 const defaultSizeBtn = document.getElementById('sz');
 const szBtn1 = document.getElementById('sz1');
 const szBtn2 = document.getElementById('sz2');
@@ -216,6 +216,8 @@ const timesUpNotification = document.getElementById('timer-sound');
 timerStartBtn.addEventListener('click', startTimer);
 
 function startTimer() {
+  timerStartBtn.style.display = "none";
+  timerPauseBtn.style.display = "inline-block";
 
   function getMinutesValue() {
     //Grabs input values from fields.
@@ -266,21 +268,31 @@ function startTimer() {
       timerStopBtn.onclick = () => {
           clearInterval(countDown);
           countdown.innerHTML = "Timer";
+          timerStartBtn.style.display = "inline-block"
+          timerResumeBtn.style.display = "none";
+          timerPauseBtn.style.display = "none";
         }
         timerStopBtn.ondblclick = () => {
             clearInterval(countDown);
             countdown.innerHTML = "Timer";
             minutesInput.value = "";
+            timerStartBtn.style.display = "inline-block"
+            timerResumeBtn.style.display = "none";
+            timerPauseBtn.style.display = "none";
           }
   //Pause timer
       timerPauseBtn.onclick = () => {
         clearInterval(countDown);
+        timerPauseBtn.style.display = "none";
+        timerResumeBtn.style.display = "inline-block";
       }
     }, 1000);
 
   //Resume Timer
     timerResumeBtn.onclick = () => {
       clearInterval(countDown);
+      timerResumeBtn.style.display = "none";
+      timerPauseBtn.style.display = "inline-block";
       const resumeCountDown = setInterval(function() {
         counter++;
         countdown.innerHTML = convertToSeconds(remainingTime - counter);
@@ -293,19 +305,80 @@ function startTimer() {
             timerStopBtn.onclick = () => {
                 clearInterval(resumeCountDown);
                 countdown.innerHTML = "Timer";
+                timerStartBtn.style.display = "inline-block"
+                timerResumeBtn.style.display = "none";
+                timerPauseBtn.style.display = "none";
               }
               timerStopBtn.ondblclick = () => {
                   clearInterval(resumeCountDown);
                   countdown.innerHTML = "Timer";
                   minutesInput.value = "";
+                  timerStartBtn.style.display = "inline-block"
+                  timerResumeBtn.style.display = "none";
+                  timerPauseBtn.style.display = "none";
                 }
         //Post Resume: Pause timer
             timerPauseBtn.onclick = () => {
               clearInterval(resumeCountDown);
+              timerPauseBtn.style.display = "none";
+              timerResumeBtn.style.display = "inline-block";
             }
         }, 1000);
       }
 }; //End of startTimer Function.
+
+
+
+
+
+// 77777777777
+// 7. Word Counter & Character Counter
+const wordCount = document.getElementById('wordCount');
+textarea.addEventListener('keydown', countWords);
+textarea.addEventListener('keyup', countWords);
+textarea.addEventListener('change', countWords);
+
+wordCount.onclick = () => {
+  wordCount.style.display = "none";
+  characterCount.style.display = "block";
+};
+
+function countWords() {
+  const words = textarea.value.trim().match(/\b\S+\b/g);
+  if (words === null) {
+    wordCount.innerText = 0;
+  }
+  wordCount.innerText = words.length;
+}
+//Character Counter
+const characterCount = document.getElementById('characterCount');
+textarea.addEventListener('keydown', countCharacters);
+textarea.addEventListener('keyup', countCharacters);
+textarea.addEventListener('change', countCharacters);
+
+characterCount.onclick = () => {
+  wordCount.style.display = "block";
+  characterCount.style.display = "none";
+};
+
+function countCharacters() {
+  const characters = textarea.value.split('');
+  characterCount.innerText = characters.length;
+}
+
+const showPanelBtn = document.getElementById('show-word-count');
+const hidePanelBtn = document.getElementById('hide-word-count');
+const elementsToDisplay = document.getElementsByClassName('hidden');
+
+showPanelBtn.onclick = () => {
+  wordCount.style.opacity = 1;
+  panel.opacity = 1;
+  textarea.style.border = "0.1em dashed black";
+}
+
+
+
+
 
 
 
