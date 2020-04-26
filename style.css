@@ -210,7 +210,7 @@ fieldset > span {
 
 /*===== Demo Modal Styling: Writing Console, Panels, Panel Buttons, Tool Tips. ========*/
 .demo-modal {
-  display: none;
+  display: block;
   margin: 0 auto;
   width: 100vw;
   height: 100vh;

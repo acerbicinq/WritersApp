@@ -136,6 +136,8 @@ pauseMusicBtn.onclick = () => {
   pauseMusicBtn.style.display = "none";
 }
 musicBtn1.onclick = () => {
+  playMusicBtn.style.display = "none";
+  pauseMusicBtn.style.display = "inline-block";
   if (musicConsole1.paused) {
     musicConsole1.play();
     musicConsole1.style.display = "block";
@@ -150,6 +152,8 @@ musicBtn1.onclick = () => {
   }
 }
 musicBtn2.onclick = () => {
+  playMusicBtn.style.display = "none";
+  pauseMusicBtn.style.display = "inline-block";
   if (musicConsole2.paused) {
     musicConsole2.play();
     musicConsole2.style.display = "block";
@@ -164,6 +168,8 @@ musicBtn2.onclick = () => {
   }
 }
 musicBtn3.onclick = () => {
+  playMusicBtn.style.display = "none";
+  pauseMusicBtn.style.display = "inline-block";
   if (musicConsole3.paused) {
     musicConsole3.play();
     musicConsole3.style.display = "block";
@@ -178,6 +184,8 @@ musicBtn3.onclick = () => {
   }
 }
 musicBtn4.onclick = () => {
+  playMusicBtn.style.display = "none";
+  pauseMusicBtn.style.display = "inline-block";
   if (musicConsole4.paused) {
     musicConsole4.play();
     musicConsole4.style.display = "block";
@@ -197,7 +205,6 @@ musicBtn4.onclick = () => {
 // 6. Timer!
 const countdown = document.getElementById('countdown');
 const minutesInput = document.getElementById('minutesInput');
-const secondsInput = document.getElementById('secondsInput');
 const timerStartBtn = document.getElementById('timerStartBtn');
 const timerPauseBtn = document.getElementById('timerPauseBtn');
 const timerResumeBtn = document.getElementById('timerResumeBtn');
@@ -205,114 +212,99 @@ const timerStopBtn = document.getElementById('timerStopBtn');
 const timesUpNotification = document.getElementById('timer-sound');
 
 
-
+// ======== TIMER START!!!! =========//
 timerStartBtn.addEventListener('click', startTimer);
-//It begins. Lol.
 
 function startTimer() {
-  //Grabs input values from fields.
-  minutesInput.onfocus = (e) => {
-  return e.target.value;
-  }
-  minutesInput.onchange = (e) => {
-  return e.target.value;
-  }
-  secondsInput.onfocus = (e) => {
-  return e.target.value;
-  }
-  secondsInput.onchange = (e) => {
-  return e.target.value;
-  }
-//Translates seconds into minutes
-const seconds = secondsInput.value % 60;
-//Grabs minutes for calculation
-const minutes = minutesInput.value;
 
-//Keeps timer looking consistent as counts down (00:00 format);
-  if (minutes < 10 && seconds < 10) {
-    countdown.innerHTML = `0${minutes}:0${seconds}`;
-  } else if (minutes > 10 && seconds < 10) {
-    countdown.innerHTML = `${minutes}:0${seconds}`;
-  } else if (minutes > 10 && seconds > 10) {
-    countdown.innerHTML = `${minutes}:${seconds}`;
-  } else if (minutes < 10 && seconds > 10) {
-    countdown.innerHTML = `0${minutes}:${seconds}`;
-  }
-  //Sets up values for countdown
-const convertMinsToSecs = minutesInput.value * 60;
-let secondsTotal = convertMinsToSecs + seconds;
+  function getMinutesValue() {
+    //Grabs input values from fields.
+    minutesInput.onfocus = (e) => {
+    return e.target.value;
+    }
+    minutesInput.onchange = (e) => {
+    return e.target.value;
+    }
+    //Grabs minutes for calculation
+    if (minutesInput.value === "") {
+      return 0;
+    } else {
+      return minutesInput.value;
+    }
+  }; //End of getMinutesValue function.
 
+  const minutesValue = getMinutesValue();
+  const remainingTime = minutesValue * 60;
+
+  function convertToSeconds(s) {
+    let min = Math.floor(s / 60);
+    let secs = s % 60;
+      if (min < 10 && secs < 10) {
+        return `${min}:0${secs}`;
+      } else if (min < 10 && secs >= 10) {
+        return `0${min}:${secs}`;
+      } else if (min >= 10 && secs > 10) {
+        return `${min}:${secs}`;
+      } else if (min >= 10 && secs < 10) {
+        return `${min}:0${secs}`;
+      }
+  }
+
+  let counter = 0;
+  countdown.innerHTML = convertToSeconds(remainingTime - counter);
 //CountDown Function
-const countDown = setInterval(function() {
-  secondsTotal--;
-  const remainingMinutes = Math.floor(secondsTotal / 60 % 60);
-  const remainingSeconds = secondsTotal % 60;
-    if (secondsTotal < 0 || secondsTotal === 0) {
+  const countDown = setInterval(function() {
+    counter++;
+    countdown.innerHTML = convertToSeconds(remainingTime - counter);
+    if (remainingTime == counter || remainingTime == 0) {
       clearInterval(countDown);
       countdown.innerHTML = `Time's up, friend. Great job today!`;
       timesUpNotification.play();
-    } else if (secondsTotal < 60) {
-      countdown.innerHTML = `0:${secondsTotal}`;
-    } else if (secondsTotal >= 60) {
-          if (remainingMinutes < 10 && remainingSeconds < 10) {
-            countdown.innerHTML = `0${remainingMinutes}:0${remainingSeconds}`;
-          } else if (remainingMinutes > 10 && remainingMinutes < 10) {
-            countdown.innerHTML = `${remainingMinutes}:0${remainingSeconds}`;
-          } else if (remainingMinutes > 10 && seconds > 10) {
-            countdown.innerHTML = `${remainingMinutes}:${remainingSeconds}`;
-          } else if (remainingMinutes < 10 && seconds > 10) {
-            countdown.innerHTML = `0${remainingMinutes}:${remainingSeconds}`;
-          }
-        }
+    }
+
   //Stop & Clear Timer
       timerStopBtn.onclick = () => {
           clearInterval(countDown);
-          countdown.innerHTML = "";
+          countdown.innerHTML = "Timer";
         }
+        timerStopBtn.ondblclick = () => {
+            clearInterval(countDown);
+            countdown.innerHTML = "Timer";
+            minutesInput.value = "";
+          }
   //Pause timer
       timerPauseBtn.onclick = () => {
         clearInterval(countDown);
-        console.log(`There are ${remainingMinutes} minutes and ${remainingSeconds} seconds left. That's ${secondsTotal} seconds! Resume?`);
       }
     }, 1000);
 
   //Resume Timer
-      timerResumeBtn.onclick = () => {
-        clearInterval(countDown);
-        const resumeCountDown = setInterval( function() {
-            secondsTotal--;
-              const remainingMinutes = Math.floor(secondsTotal / 60 % 60);
-              const remainingSeconds = secondsTotal % 60;
-                if (secondsTotal < 0 || secondsTotal === 0) {
+    timerResumeBtn.onclick = () => {
+      clearInterval(countDown);
+      const resumeCountDown = setInterval(function() {
+        counter++;
+        countdown.innerHTML = convertToSeconds(remainingTime - counter);
+        if (remainingTime == counter || remainingTime == 0) {
+          clearInterval(resumeCountDown);
+          countdown.innerHTML = `Time's up, friend. Great job today!`;
+          timesUpNotification.play();
+        }
+        //Post Resume: Stop & Clear Timer
+            timerStopBtn.onclick = () => {
+                clearInterval(resumeCountDown);
+                countdown.innerHTML = "Timer";
+              }
+              timerStopBtn.ondblclick = () => {
                   clearInterval(resumeCountDown);
-                  countdown.innerHTML = `Time's up, friend. Great job today!`;
-                  timesUpNotification.play();
-                  }  else if (secondsTotal < 60) {
-                    countdown.innerHTML = `0:${secondsTotal}`;
-                  } else if (secondsTotal > 0) {
-                      if (remainingMinutes < 10 && remainingSeconds < 10) {
-                        countdown.innerHTML = `0${remainingMinutes}:0${remainingSeconds}`;
-                      } else if (remainingMinutes > 10 && remainingMinutes < 10) {
-                        countdown.innerHTML = `${remainingMinutes}:0${remainingSeconds}`;
-                      } else if (remainingMinutes > 10 && seconds > 10) {
-                        countdown.innerHTML = `${remainingMinutes}:${remainingSeconds}`;
-                      } else if (remainingMinutes < 10 && seconds > 10) {
-                        countdown.innerHTML = `0${remainingMinutes}:${remainingSeconds}`;
-                      }
-                    }
-
-              //Post Resume: Stop & Clear Timer
-                  timerStopBtn.onclick = () => {
-                      clearInterval(resumeCountDown);
-                      countdown.innerHTML = "";
-                    }
-              //Post Resume: Pause Timer
-                  timerPauseBtn.onclick = () => {
-                    clearInterval(resumeCountDown);
-                    console.log(`Post Resume: There are ${remainingMinutes} minutes and ${remainingSeconds} seconds left. That's ${secondsTotal} seconds! Resume Again?`);
-                  }
-          }, 1000);
-      };
+                  countdown.innerHTML = "Timer";
+                  minutesInput.value = "";
+                }
+        //Post Resume: Pause timer
+            timerPauseBtn.onclick = () => {
+              clearInterval(resumeCountDown);
+            }
+        }, 1000);
+      }
 }; //End of startTimer Function.
 
 
@@ -322,6 +314,7 @@ const countDown = setInterval(function() {
 
 //Save functionality
 
+/*
 function saveUserFileName() {
   const text = prompt("Please enter the file name to save as");
   console.log(text);
