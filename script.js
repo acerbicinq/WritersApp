@@ -366,46 +366,20 @@ function countCharacters() {
   characterCount.innerText = characters.length;
 }
 
-const showPanelBtn = document.getElementById('show-word-count');
-const hidePanelBtn = document.getElementById('hide-word-count');
-const elementsToDisplay = document.getElementsByClassName('hidden');
-
-showPanelBtn.onclick = () => {
-  wordCount.style.opacity = 1;
-  panel.opacity = 1;
-  textarea.style.border = "0.1em dashed black";
-}
-
-
-
-
-
-
-
-
 
 
 //Save functionality
+const saveBtn = document.getElementById('sv1');
 
-/*
-function saveUserFileName() {
-  const text = prompt("Please enter the file name to save as");
-  console.log(text);
-  return;
-}
-
-function download(filename, text) {
-
-  const saveLink = document.createElement('a');
-  saveLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textarea.value));
-  saveLink.setAttribute('download', filename);
-
-  saveLink.style.display = 'none';
-  document.body.appendChild(saveLink);
-
-  saveLink.click();
-  saveUserFileName();
-  document.body.removeChild(saveLink);
+saveBtn.onclick = function download(filename) {
+  saveAsTextFile = document.createElement('a');
+  const userFilename = prompt("Please enter the file name to save as");
+  saveAsTextFile.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textarea.value));
+  saveAsTextFile.setAttribute('download', userFilename);
+  saveAsTextFile.style.display = 'none';
+  document.body.appendChild(saveAsTextFile);
+  saveAsTextFile.click();
+  document.body.removeChild(saveAsTextFile);
 }
 
 
