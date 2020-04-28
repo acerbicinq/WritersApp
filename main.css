@@ -1,0 +1,289 @@
+/* BASE */
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+  border: 0.1em solid #303030;
+  padding:  1.5em 2em;
+  margin: 0.8em 0;
+  display: inline-block;
+}
+
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* LAYOUT */
+#header {
+  width: 100%;
+  text-align: center;
+  margin: 2em auto;
+}
+#navbar {
+  width: 100%;
+  margin-bottom: 2em;
+  background-color: #f2f2f2;
+}
+#article {
+  padding: 3em;
+}
+.l-footer {
+  width: 100%;
+  padding: 2em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #f2f2f2;
+}
+#navpanel {
+  float: left;
+  padding: 0.5em;
+  padding-top: 4em;
+}
+#sidebar {
+  padding: 0.5em;
+  padding-top: 4em;
+}
+.l-modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* MODULES */
+.home-header {
+  margin: 1.5em auto;
+}
+.home-navbar {
+
+}
+
+.home-navbar-list-items {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em;
+  padding-right: 10em;
+}
+.home-navbar-list-item {
+  padding: 0.3em;
+  font-size: 1.4em;
+  display: inline-block;
+}
+
+.home-footer {
+
+}
+.home-footer-contact-box {
+  text-align: center;
+}
+.home-footer-soc-btns {
+  padding: 0.4em;
+}
+.home-footer-soc-btn {
+  display: inline-block;
+
+}
+.home-footer-contact-btns {
+
+}
+.home-footer-contact-btn {
+  display: inline-block;
+  padding: 0.4em;
+}
+
+
+
+.content-box {
+  text-align: center;
+  height: 60vh;
+  width: 50%;
+  margin: 0 auto;
+}
+.content-header {
+
+}
+.content-paragraph {
+  margin-bottom: 1em;
+}
+
+
+.login-modal-box {
+  position: absolute;
+  height: 60%;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+}
+.login-modal-content {
+  background-color: lightblue;
+  display: flex;
+  flex-flow: column;
+  padding: 2em;
+  border: 0.1em solid red;
+}
+.login-header {
+  margin: 1.2em auto;
+  font-size: 32px;
+}
+.login-photo {
+  height: 30%;
+  width: 20%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.login-fieldname {
+  display: block;
+}
+.login-field {
+  width: 100%;
+}
+.login-btn {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1.3em;
+}
+.login-checkbox {
+border: 0.1em solid black;
+padding: 0.4em;
+}
+.login-checkbox-label {
+  margin-left: 0.4em;
+}
+.login-fieldset {
+  margin: 1.6em auto;
+}
+.login-cancel-btn {
+  width: 20%;
+  padding: 1em;
+  margin-left: 10%;
+}
+.login-forgot-psw-text {
+  margin-left: 45%;
+}
+
+#login {
+  display:none;
+}
+
+.demo-modal-box {
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background: lightblue url('./img/fog.jpg') no-repeat scroll center/cover;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.navpanel-items {
+  text-align: center;
+}
+.navpanel-item {
+  display: block;
+  margin: 0 auto;
+}
+.navpanel-link {
+  display: block;
+}
+.demo-content {
+  display: flex;
+  justify-content: center;
+}
+.demo-movable-div {
+/*All 3 panels should be able to move with this */
+}
+.demo-resizable-div {
+/* envelopes textarea and word counter */
+}
+.demo-textarea {
+  min-width: 850px;
+  min-height: 600px;
+  max-height: 90vh;
+  max-width: 1800px;
+  padding: 20px;
+  border: 1px dashed black;
+  background-color: transparent;
+  font-family: "libre_caslon_displayregular";
+}
+.demo-word-counter-items {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+.demo-word-counter-item {
+
+}
+.demo-word-counter-btn {
+
+}
+.demo-sidebar {
+
+}
+.demo-sidebar input[type=button] {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 0.3em auto;
+}
+.demo-font-options {
+
+}
+.demo-font-option {
+
+}
+.demo-font-size-options {
+
+}
+.demo-font-size-option {
+
+}
+.demo-background-options {
+
+}
+.demo-background-option {
+
+}
+.demo-music-options {
+
+}
+.demo-music-option {
+
+}
+.demo-music-controls {
+  display: none;
+}
+.demo-close-btn {
+  position: fixed;
+  top: 15px;
+  right: 35px;
+}
+.demo-note {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+}
+
+/* STATES */
+.home-navbar-list-item:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}

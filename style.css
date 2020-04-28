@@ -43,69 +43,12 @@
 
 
 /*==== General Styling ====*/
-html {
-  box-sizing: border-box;
 
-}
 
-*, *::before, *::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
 
-h1 {
-  text-align: center;
-  margin: 2em auto;
 
-}
-h2 {
-  text-align: center;
-}
-
-p {
-  margin-bottom: 1em;
-}
 
 /*==== Nav Bar: Home ====*/
-.nav-bar ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #303030;
-  padding: 0 6em;
-  margin-bottom: 2em;
-}
-
-.nav-bar ul li {
-  padding: 2%;
-  color: white;
-  font-size: 1.15em;
-}
-
-.nav-bar ul li:hover {
-  font-weight: bold;
-  text-decoration: underline;
-}
-/*==== Content: Home ====*/
-.main {
-  padding: 3em;
-  text-align: center;
-  height: 60vh;
-}
-.home {
-  width: 50%;
-  margin: 0 auto;
-
-}
-footer {
-  width: 100%;
-  background-color: #f2f2f2;
-  padding: 2em;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
 .soc-btn-container ul li, .info-container ul li {
   display: inline-block;
 }
@@ -185,14 +128,7 @@ margin-bottom: 2em;
 }
 
 /*==== Forms ====*/
-input[type=text], input[type=password], input[type=email] {
-  width: 100%;
-  padding:  1.5em 2em;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+
 input[type=checkbox] {
   display: inline-block;
   margin: 0.5em 1em;
@@ -224,10 +160,12 @@ fieldset > span {
 .movable-writer-station {
   display: flex;
   justify-content: center;
+
 }
 
 /*==== Writing Console Styling ====*/
 .writer-console-container {
+  border: 1px solid red;
   background-color: transparent;
   display: flex;
   flex-flow: column;
