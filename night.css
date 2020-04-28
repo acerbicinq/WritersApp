@@ -1,0 +1,4 @@
+.demo-modal-box {
+  background: rgba(0, 0, 0, 0.7) url('./img/night.jpg') no-repeat scroll center/cover;
+  background-blend-mode: multiply;
+}

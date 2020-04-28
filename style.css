@@ -204,9 +204,7 @@ textarea {
   padding: 1em;
 }
 
-#characterCount {
-  display: none;
-}
+
 #show-word-count, #hide-word-count {
   border: 0.1em solid black;
   color: black;

@@ -1,6 +1,6 @@
 // TABLE OF CONTENTS  //
 // 1. Modal Functionality
-// 2. Background Change Functionality
+// 2. Theme Change Functionality
 // 3. Font Size Incrementing
 // 4. Font Styling
 // 5. Local Music Play/Display Functionality
@@ -19,8 +19,8 @@ const loginModal = document.getElementById('login');
 const openLoginModal = document.getElementById('open-login');
 const openSignupModal = document.getElementById('open-signup');
 const openDemoModal = document.getElementById('open-demo');
-const closeButton = document.getElementsByClassName('close-btn')[0];
-const cancelButton = document.getElementsByClassName('cancel-btn')[0];
+const closeButton = document.getElementById('demo-close');
+const cancelButton = document.getElementById('cancel-login');
 
 //Login Modal Functionality
 openLoginModal.onclick = () => loginModal.style.display = "block";
@@ -48,21 +48,24 @@ const bgBtn3 = document.getElementById('bg3');
 const bgBtn4 = document.getElementById('bg4');
 const bgBtn5 = document.getElementById('bg5');
 
-bgBtn1.onclick = () => demoModal.style.background = "url('./img/fog.jpg') no-repeat scroll center/cover";
-bgBtn2.onclick = () => {
-  demoModal.style.background = "rgba(255, 255, 255, 0.5) url('./img/ocean.jpg') no-repeat scroll center/cover";
-  demoModal.style.backgroundBlendMode = "overlay";
+const defaultTheme = document.getElementById('default-theme');
+
+bgBtn1.onclick = () => {
+  defaultTheme.href = "./fog.css"
 }
-bgBtn3.onclick = () => demoModal.style.background = "url('./img/sunset.jpg') no-repeat scroll center/cover";
+bgBtn2.onclick = () => {
+  defaultTheme.href = "./ocean.css"
+}
+bgBtn3.onclick = () => {
+  defaultTheme.href = "./sunset.css"
+}
 
 bgBtn4.onclick = () => {
-  demoModal.style.background = "rgba(0, 0, 0, 0.7) url('./img/night.jpg') no-repeat scroll center/cover";
-  demoModal.style.backgroundBlendMode = "multiply";
+  defaultTheme.href = "./night.css"
 };
 
 bgBtn5.onclick = () => {
-  demoModal.style.background = "rgba(0, 0, 0, 0.75) url('./img/wood.jpg') no-repeat scroll center/cover";
-  demoModal.style.backgroundBlendMode = "multiply";
+  defaultTheme.href = "./wood.css"
 };
 
 // 3333333333

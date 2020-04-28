@@ -1,0 +1,4 @@
+.demo-modal-box {
+  background: rgba(255, 255, 255, 0.5) url('./img/ocean.jpg') no-repeat scroll center/cover;
+  background-blend-mode: overlay;
+}

@@ -183,12 +183,16 @@ padding: 0.4em;
   display:none;
 }
 
+
+/* Demo Module */
+
+
 .demo-modal-box {
   display: block;
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
-  background: lightblue url('./img/fog.jpg') no-repeat scroll center/cover;
+  background-color: lightblue;
   z-index: 3;
   top: 0;
   left: 0;
@@ -230,10 +234,18 @@ padding: 0.4em;
   flex-flow: column;
 }
 .demo-word-counter-item {
-
+  border-top: 0.1em solid black;
+  border-bottom: 0.1em solid black;
+  padding: 1em;
+  margin: 2% auto;
 }
 .demo-word-counter-btn {
-
+  background-color: transparent;
+  width: 10%;
+  padding: 0.3em;
+}
+#characterCount, #hide-console {
+  display: none;
 }
 .demo-sidebar {
 
@@ -244,12 +256,62 @@ padding: 0.4em;
   width: 25px;
   margin: 0.3em auto;
 }
+
+
+/* Demo Font Options */
+/*==== Custom Fonts ====*/
+@font-face {
+    font-family: 'darkwomanregular';
+    src: url('./fonts/darkwoman-webfont.woff2') format('woff2'),
+         url('./fonts/darkwoman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by tudy1311 on 1001fonts.com */
+}
+@font-face {
+    font-family: 'pistararegular';
+    src: url('./fonts/pistara-webfont.woff2') format('woff2'),
+         url('./fonts/pistara-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by skomii on 1001fonts.com */
+}
+@font-face {
+    font-family: 'libre_caslon_displayregular';
+    src: url('./fonts/librecaslondisplay-regular-webfont.woff2') format('woff2'),
+         url('./fonts/librecaslondisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Impallari Type on 1001fonts.com */
+}
+@font-face {
+    font-family: 'nimbus_monoregular';
+    src: url('./fonts/nimbusmono-regular-webfont.woff2') format('woff2'),
+         url('./fonts/nimbusmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by URW++ on 1001fonts.com */
+}
+@font-face {
+    font-family: 'montezregular';
+    src: url('./fonts/montez-regular-webfont.woff2') format('woff2'),
+         url('./fonts/montez-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Astigmatic One Eye Typographic Institute on 1001fonts.com */
+}
+
 .demo-font-options {
 
 }
 .demo-font-option {
 
 }
+#ltr1 {font-family: "libre_caslon_displayregular";}
+#ltr2 {font-family: "pistararegular";}
+#ltr3 {font-family: "nimbus_monoregular";}
+#ltr4 {font-family: "alluraregular";}
+#ltr5 {font-family: "darkwomanregular";}
 .demo-font-size-options {
 
 }
@@ -262,13 +324,22 @@ padding: 0.4em;
 .demo-background-option {
 
 }
+#bg1 {background: url('../img/fog.jpg') center/cover no-repeat;}
+#bg2 {background: url('../img/ocean.jpg') center/cover no-repeat;}
+#bg3 {background: url('../img/sunset.jpg') center/cover no-repeat;}
+#bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
+#bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
+
 .demo-music-options {
 
 }
 .demo-music-option {
 
 }
-.demo-music-controls {
+.demo-music-control {
+  display: none;
+}
+#timerResumeBtn, #timerPauseBtn, #timer-sound {
   display: none;
 }
 .demo-close-btn {

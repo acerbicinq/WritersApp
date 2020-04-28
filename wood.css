@@ -1,0 +1,4 @@
+.demo-modal-box {
+  background: rgba(0, 0, 0, 0.75) url('./img/wood.jpg') no-repeat scroll center/cover;
+  background-blend-mode: multiply;
+}

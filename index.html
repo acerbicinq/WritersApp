@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./main.css" type="text/css" />
+  <link rel="stylesheet" id="default-theme" href="./fog.css" type="text/css" />
+
 
   <title>Writers App</title>
   </head>
@@ -62,8 +64,8 @@
 
 
   <!--  DEMO CONTENT -------------------------------------------------------------->
-<section class="l-modal">
-    <div id="demo" class="demo-modal-box">
+<section id="demo" class="l-modal">
+    <div class="demo-modal-box">
       <div class="demo-content">
         <aside>
           <div class="" >
@@ -90,8 +92,8 @@
                   <div class="demo-word-counter-items">
                       <p class="demo-word-counter-item" id="wordCount">0</p>
                       <p class="demo-word-counter-item" id="characterCount">0</p>
-                      <button class="demo-word-counter-btn" id="show-word-count" type="button">Keep visible?</button>
-                      <button class="demo-word-counter-btn" id="hide-word-count" type="button">Hide?</button>
+                      <button class="demo-word-counter-btn" id="show-console" type="button">Keep visible?</button>
+                      <button class="demo-word-counter-btn" id="hide-console" type="button">Hide?</button>
                   </div>
               </div>
 
@@ -130,19 +132,19 @@
             </div>
             <!-- Audio Source files for music sounds -->
                 <div class="demo-music-controls">
-                  <audio id="controls1" controls loop>
+                  <audio id="controls1" class="demo-music-control" controls loop>
                      <source id="music1" src="./audio/Akeboshi - Wind.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
-                  <audio id="controls2" controls loop>
+                  <audio id="controls2" class="demo-music-control" controls loop>
                      <source src="./audio/Akeboshi - Yellow Moon.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
-                  <audio id="controls3" controls loop>
+                  <audio id="controls3" class="demo-music-control" controls loop>
                      <source src="./audio/Aluto - Michi To You All.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
-                  <audio id="controls4" controls loop>
+                  <audio id="controls4" class="demo-music-control" controls loop>
                      <source src="./audio/Chaba - Parade.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
@@ -181,7 +183,7 @@
     </div>
 
     <!--Close Demo Modal Button -->
-        <div class="demo-close-btn">&times;</div>
+        <div id="demo-close" class="demo-close-btn">&times;</div>
     <!--Fixed note displaying photo source -->
         <footer class="demo-note">
           <p class="demo-note-text" id="note">Photo by <a class="demo-note-link" href="#">Name</a>.</p>
@@ -190,8 +192,8 @@
 </section>
 
 <!--- LOGIN CONTENT -------------------------------------------------------------->
-<section class="l-modal">
-      <div id="login" class="login-modal-box">
+<section id="login" class="l-modal">
+      <div class="login-modal-box">
         <div class="login-modal-content">
             <h2 class="login-header">Login, dude!</h2>
               <img class="login-photo" src="./img/Placeholder.png" alt="Two Friends" />
@@ -207,7 +209,7 @@
                     <input type="checkbox" checked="checked" name="remember" /><span class="login-checkbox-label">Remember Me</span>
                   </label>
                 <fieldset class="login-fieldset">
-                  <button class="login-cancel-btn" type="button">Cancel</button>
+                  <button id="cancel-login" class="login-cancel-btn" type="button">Cancel</button>
                   <span class="login-forgot-psw-text">Forgot <a class="login-forgot-psw-link" href="#">password</a>?</span>
                 </fieldset>
 
