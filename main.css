@@ -1,3 +1,48 @@
+/*==== Custom Fonts ====*/
+@font-face {
+    font-family: 'darkwomanregular';
+    src: url('./fonts/darkwoman-webfont.woff2') format('woff2'),
+         url('./fonts/darkwoman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by tudy1311 on 1001fonts.com */
+}
+@font-face {
+    font-family: 'pistararegular';
+    src: url('./fonts/pistara-webfont.woff2') format('woff2'),
+         url('./fonts/pistara-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by skomii on 1001fonts.com */
+}
+@font-face {
+    font-family: 'libre_caslon_displayregular';
+    src: url('./fonts/librecaslondisplay-regular-webfont.woff2') format('woff2'),
+         url('./fonts/librecaslondisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Impallari Type on 1001fonts.com */
+}
+@font-face {
+    font-family: 'nimbus_monoregular';
+    src: url('./fonts/nimbusmono-regular-webfont.woff2') format('woff2'),
+         url('./fonts/nimbusmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by URW++ on 1001fonts.com */
+}
+@font-face {
+    font-family: 'montezregular';
+    src: url('./fonts/montez-regular-webfont.woff2') format('woff2'),
+         url('./fonts/montez-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Credits: Made by Astigmatic One Eye Typographic Institute on 1001fonts.com */
+}
+
+
+
+
 /* BASE */
 
 html {
@@ -10,13 +55,13 @@ html {
 }
 input[type=text],
 input[type=password],
-input[type=email] {
+input[type=email],
+input[type=number] {
   border: 0.1em solid #303030;
   padding:  1.5em 2em;
   margin: 0.8em 0;
   display: inline-block;
 }
-
 
 a {
   text-decoration: none;
@@ -52,13 +97,15 @@ a:hover {
   float: left;
   padding: 0.5em;
   padding-top: 4em;
+  min-width: 180px;
 }
 #sidebar {
   padding: 0.5em;
   padding-top: 4em;
+  min-width: 250px;
 }
 .l-modal {
-  display: none;
+  display: block;
   position: fixed;
   left: 0;
   top: 0;
@@ -185,8 +232,6 @@ padding: 0.4em;
 
 
 /* Demo Module */
-
-
 .demo-modal-box {
   display: block;
   margin: 0 auto;
@@ -200,17 +245,25 @@ padding: 0.4em;
 }
 .navpanel-items {
   text-align: center;
+  font-size: 1.2em;
 }
-.navpanel-item {
-  display: block;
-  margin: 0 auto;
+.navpanel-header {
+  font-family: "libre_caslon_displayregular";
+  margin-bottom: 1.2em;
 }
 .navpanel-link {
   display: block;
+  margin: 0.4em auto;
+}
+.navpanel-btn {
+  padding: 0.8em;
+  margin: 1em auto;
+  font-weight: bold;
 }
 .demo-content {
   display: flex;
   justify-content: center;
+
 }
 .demo-movable-div {
 /*All 3 panels should be able to move with this */
@@ -224,7 +277,6 @@ padding: 0.4em;
   max-height: 90vh;
   max-width: 1800px;
   padding: 20px;
-  border: 1px dashed black;
   background-color: transparent;
   font-family: "libre_caslon_displayregular";
 }
@@ -234,8 +286,6 @@ padding: 0.4em;
   flex-flow: column;
 }
 .demo-word-counter-item {
-  border-top: 0.1em solid black;
-  border-bottom: 0.1em solid black;
   padding: 1em;
   margin: 2% auto;
 }
@@ -247,100 +297,64 @@ padding: 0.4em;
 #characterCount, #hide-console {
   display: none;
 }
-.demo-sidebar {
-
-}
 .demo-sidebar input[type=button] {
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   margin: 0.3em auto;
 }
 
 
 /* Demo Font Options */
-/*==== Custom Fonts ====*/
-@font-face {
-    font-family: 'darkwomanregular';
-    src: url('./fonts/darkwoman-webfont.woff2') format('woff2'),
-         url('./fonts/darkwoman-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    /* Credits: Made by tudy1311 on 1001fonts.com */
-}
-@font-face {
-    font-family: 'pistararegular';
-    src: url('./fonts/pistara-webfont.woff2') format('woff2'),
-         url('./fonts/pistara-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    /* Credits: Made by skomii on 1001fonts.com */
-}
-@font-face {
-    font-family: 'libre_caslon_displayregular';
-    src: url('./fonts/librecaslondisplay-regular-webfont.woff2') format('woff2'),
-         url('./fonts/librecaslondisplay-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    /* Credits: Made by Impallari Type on 1001fonts.com */
-}
-@font-face {
-    font-family: 'nimbus_monoregular';
-    src: url('./fonts/nimbusmono-regular-webfont.woff2') format('woff2'),
-         url('./fonts/nimbusmono-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    /* Credits: Made by URW++ on 1001fonts.com */
-}
-@font-face {
-    font-family: 'montezregular';
-    src: url('./fonts/montez-regular-webfont.woff2') format('woff2'),
-         url('./fonts/montez-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    /* Credits: Made by Astigmatic One Eye Typographic Institute on 1001fonts.com */
-}
 
-.demo-font-options {
 
-}
-.demo-font-option {
-
-}
 #ltr1 {font-family: "libre_caslon_displayregular";}
 #ltr2 {font-family: "pistararegular";}
 #ltr3 {font-family: "nimbus_monoregular";}
 #ltr4 {font-family: "alluraregular";}
 #ltr5 {font-family: "darkwomanregular";}
-.demo-font-size-options {
 
-}
-.demo-font-size-option {
-
-}
-.demo-background-options {
-
-}
-.demo-background-option {
-
-}
 #bg1 {background: url('../img/fog.jpg') center/cover no-repeat;}
 #bg2 {background: url('../img/ocean.jpg') center/cover no-repeat;}
 #bg3 {background: url('../img/sunset.jpg') center/cover no-repeat;}
 #bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
 #bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
 
-.demo-music-options {
 
-}
-.demo-music-option {
-
-}
-.demo-music-control {
+.demo-music-control, #pause {
   display: none;
+}
+.demo-timer {
+  margin: 2em auto;
+}
+.demo-countdown {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: "libre_caslon_displayregular";
+  margin: 0 3em;
+}
+
+.timer-btn {
+  padding: 0.6em;
+  width: 38%;
 }
 #timerResumeBtn, #timerPauseBtn, #timer-sound {
   display: none;
+}
+.demo-save-btns {
+  margin-bottom: 1em;
+}
+.demo-save-btn {
+  padding: 0.5em;
+  font-weight: bold;
+}
+.demo-share-btns {
+  margin-top: 1em;
+}
+.demo-share-btn {
+  padding: 0.5em;
+  font-weight: bold;
+
 }
 .demo-close-btn {
   position: fixed;
@@ -351,10 +365,116 @@ padding: 0.4em;
   position: fixed;
   bottom: 15px;
   right: 25px;
+  height: 40px;
+  border-radius: 15%;
+}
+.save-tooltip-text {
+  margin-top: 0.5em;
+}
+.share-tooltip-text {
+  margin-top: 0.5em;
+}
+.tooltip-text {
+  position: absolute;
+  width: 170px;
+  font-size: 1em;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 102;
+}
+.tooltip-text::before {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
 }
 
 /* STATES */
 .home-navbar-list-item:hover {
   font-weight: bold;
   text-decoration: underline;
+}
+.tooltip-text,
+.tooltip-text::before,
+.share-tooltip-text,
+.save-tooltip-text {
+  opacity: 0;
+}
+.navpanel-items:hover
+.tooltip-text,
+.tooltip-text::before {
+  opacity: 1;
+}
+.demo-save-btns:hover .save-tooltip-text {
+  opacity: 1;
+}
+.demo-share-btns:hover
+.share-tooltip-text {
+  opacity: 1;
+}
+
+.demo-note {
+  opacity: 0.2;
+}
+.demo-note:hover {
+  opacity: 1;
+}
+
+.demo-font-option + .demo-font-option {
+  opacity: 0;
+}
+.demo-font-options:hover
+.demo-font-option + .demo-font-option {
+  opacity: 0.5;
+}
+.demo-font-options:hover
+.demo-font-option + .demo-font-option:hover {
+  opacity: 1;
+}
+
+
+
+.demo-font-size-option + .demo-font-size-option {
+  opacity: 0;
+}
+.demo-font-size-options:hover
+.demo-font-size-option + .demo-font-size-option {
+  opacity: 0.5;
+}
+.demo-font-size-options:hover
+.demo-font-size-option + .demo-font-size-option:hover {
+  opacity: 1;
+}
+
+
+
+
+.demo-background-option + .demo-background-option {
+    opacity: 0;
+}
+.demo-background-options:hover
+.demo-background-option + .demo-background-option {
+  opacity: 0.5;
+}
+.demo-background-options:hover
+.demo-background-option + .demo-background-option:hover {
+  opacity: 1
+}
+
+
+
+.demo-music-option:nth-child(n+3) {
+  opacity: 0;
+}
+.demo-music-options:hover
+.demo-music-option:nth-child(n+3) {
+  opacity: 0.5;
+}
+.demo-music-options:hover
+.demo-music-option:nth-child(n+3):hover {
+  opacity: 1;
 }

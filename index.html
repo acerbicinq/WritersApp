@@ -67,19 +67,19 @@
 <section id="demo" class="l-modal">
     <div class="demo-modal-box">
       <div class="demo-content">
-        <aside>
+        <aside id="navpanel">
           <div class="" >
-            <nav id="navpanel">
+            <nav >
               <div class="navpanel-items">
-                <h2 class="navpanel-item">Writer's Station</h2>
+                <h2 class="navpanel-header">Writer's Station</h2>
                   <a class="navpanel-link">My Stories</a>
                   <a class="navpanel-link">Calendar</a>
                   <a class="navpanel-link">Writer's Groups</a>
                   <a class="navpanel-link">Friends</a>
                   <a class="navpanel-link">Forum</a>
-                  <button class="navpanel-item">Invite to Sprint</button>
-                    <div class="">
-                      <p class="">NOTE: Writer's Station unavailable for demo.</p>
+                  <button class="navpanel-btn">Invite to Sprint</button>
+                    <div class="navpanel-tooltip">
+                      <p class="tooltip-text">NOTE: Writer's Station unavailable for demo.</p>
                     </div>
               </div>
             </nav>
@@ -89,11 +89,9 @@
           <div class="demo-movable-div">
               <div class="demo-resizable-div">
                   <textarea class="demo-textarea" id="console-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
-                  <div class="demo-word-counter-items">
+                  <div id="word-count-items" class="demo-word-counter-items">
                       <p class="demo-word-counter-item" id="wordCount">0</p>
                       <p class="demo-word-counter-item" id="characterCount">0</p>
-                      <button class="demo-word-counter-btn" id="show-console" type="button">Keep visible?</button>
-                      <button class="demo-word-counter-btn" id="hide-console" type="button">Hide?</button>
                   </div>
               </div>
 
@@ -149,14 +147,14 @@
                     Your browser does not support the audio element.
                   </audio>
                 </div>
-            <div class="" id="timer-container">
-              <div class="" id="countdown">Timer</div>
+            <div class="demo-timer" id="timer-container">
+              <div class="demo-countdown" id="countdown">Timer</div>
               <input type="number" id="minutesInput" placeholder="Minutes">
-                <div class="">
-                  <button id="timerStartBtn" class="">Start</button>
-                  <button id="timerPauseBtn" class="">Pause</button>
-                  <button id="timerResumeBtn" class="">Resume</button>
-                  <button id="timerStopBtn" class="">Stop & Clear</button>
+                <div class="timer-btns">
+                  <button id="timerStartBtn" class="timer-btn">Start</button>
+                  <button id="timerPauseBtn" class="timer-btn">Pause</button>
+                  <button id="timerResumeBtn" class="timer-btn">Resume</button>
+                  <button id="timerStopBtn" class="timer-btn">Stop & Clear</button>
                 </div>
                 <audio id="timer-sound" controls>
                    <source src="./audio/Out of Time.mp3" type="audio/mpeg">
@@ -164,20 +162,25 @@
                 </audio>
               </div>
       <!---SAVE OPTIONS ---->
-            <div class="">
-              <button id="sv1" class="" value="" />Save</button>
-              <button id="sv2" class="" value="" />Save As</button>
-              <button id="sv3" class="" value="" />Download</button>
-            </div>
-            <div class="">
-              <div class="">
-                <button id="sh1" class="">Share</button>
-                <button id="sh2" class="">Email</button>
-                <button id="sh3" class="">DropBox</button>
-                <button id="sh4" class="">Google Docs</button>
+            <div class="demo-save-btns">
+              <button id="sv1" class="demo-save-btn" />Save</button>
+              <button id="sv2" class="demo-save-btn" />Save As</button>
+              <button id="sv3" class="demo-save-btn" />Download</button>
+              <div class="save-btn-tooltip">
+                  <p class="save-tooltip-text">Only "Save as .txt file" available in demo.</p>
               </div>
-                  <p class="">Share functionality unavailable for demo.</p>
             </div>
+
+              <div class="demo-share-btns">
+                <button id="sh1" class="demo-share-btn">Share</button>
+                <button id="sh2" class="demo-share-btn">Email</button>
+                <button id="sh3" class="demo-share-btn">DropBox</button>
+                <button id="sh4" class="demo-share-btn">Google Docs</button>
+                <div class="share-btn-tooltip">
+                    <p class="share-tooltip-text">Share functionality unavailable for demo.</p>
+                </div>
+              </div>
+
           </div>
         </aside>
     </div>
@@ -186,7 +189,7 @@
         <div id="demo-close" class="demo-close-btn">&times;</div>
     <!--Fixed note displaying photo source -->
         <footer class="demo-note">
-          <p class="demo-note-text" id="note">Photo by <a class="demo-note-link" href="#">Name</a>.</p>
+          <p class="demo-note-text">Photo by <a id="note" class="demo-note-link" href="https://unsplash.com/@mrmrs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Skull Kat</a>.</p>
         </footer>
     </div>
 </section>

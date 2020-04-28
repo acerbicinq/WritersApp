@@ -7,8 +7,7 @@
 // 6. Timer Functionality
 // 7. Word & Character Counter Functionality
 // 8. Console Display/Hide Animations with setTimeOut & Event Handlers
-
-// ?. Save Option Functionality
+// 9. Save Option Functionality
 // ?. Move/Rezise Text Area
 // ?. Notes on Implementing Accessibility Functionality with for() loops.
 
@@ -49,23 +48,34 @@ const bgBtn4 = document.getElementById('bg4');
 const bgBtn5 = document.getElementById('bg5');
 
 const defaultTheme = document.getElementById('default-theme');
+const note = document.getElementById('note');
 
 bgBtn1.onclick = () => {
-  defaultTheme.href = "./fog.css"
+  defaultTheme.href = "./fog.css";
+  note.href = "https://unsplash.com/@mrmrs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+  note.innerText = "Skull Kat";
 }
 bgBtn2.onclick = () => {
-  defaultTheme.href = "./ocean.css"
+  defaultTheme.href = "./ocean.css";
+  note.href = "https://unsplash.com/@hermansyah?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+  note.innerText = "Hermansyah";
 }
 bgBtn3.onclick = () => {
-  defaultTheme.href = "./sunset.css"
+  defaultTheme.href = "./sunset.css";
+  note.href = "https://unsplash.com/@paul_nic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+  note.innerText = "Paolo Nicolello";
 }
 
 bgBtn4.onclick = () => {
-  defaultTheme.href = "./night.css"
+  defaultTheme.href = "./night.css";
+  note.href = "https://unsplash.com/@verstuyftj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+  note.innerText = "Jonas Verstuyft";
 };
 
 bgBtn5.onclick = () => {
-  defaultTheme.href = "./wood.css"
+  defaultTheme.href = "./wood.css";
+  note.href = "https://unsplash.com/@davidboca?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+  note.innerText = "David Boca";
 };
 
 // 3333333333
@@ -264,6 +274,7 @@ function startTimer() {
     if (remainingTime == counter || remainingTime == 0) {
       clearInterval(countDown);
       countdown.innerHTML = `Time's up, friend. Great job today!`;
+      countdown.style.margin = "0";
       timesUpNotification.play();
     }
 
@@ -271,6 +282,7 @@ function startTimer() {
       timerStopBtn.onclick = () => {
           clearInterval(countDown);
           countdown.innerHTML = "Timer";
+          countdown.style.margin = "0 3em";
           timerStartBtn.style.display = "inline-block"
           timerResumeBtn.style.display = "none";
           timerPauseBtn.style.display = "none";
@@ -278,6 +290,7 @@ function startTimer() {
         timerStopBtn.ondblclick = () => {
             clearInterval(countDown);
             countdown.innerHTML = "Timer";
+            countdown.style.margin = "0 3em";
             minutesInput.value = "";
             timerStartBtn.style.display = "inline-block"
             timerResumeBtn.style.display = "none";
@@ -302,12 +315,14 @@ function startTimer() {
         if (remainingTime == counter || remainingTime == 0) {
           clearInterval(resumeCountDown);
           countdown.innerHTML = `Time's up, friend. Great job today!`;
+          countdown.style.margin = "0";
           timesUpNotification.play();
         }
         //Post Resume: Stop & Clear Timer
             timerStopBtn.onclick = () => {
                 clearInterval(resumeCountDown);
                 countdown.innerHTML = "Timer";
+                countdown.style.margin = "0 3em";
                 timerStartBtn.style.display = "inline-block"
                 timerResumeBtn.style.display = "none";
                 timerPauseBtn.style.display = "none";
@@ -315,6 +330,7 @@ function startTimer() {
               timerStopBtn.ondblclick = () => {
                   clearInterval(resumeCountDown);
                   countdown.innerHTML = "Timer";
+                  countdown.style.margin = "0 3em";
                   minutesInput.value = "";
                   timerStartBtn.style.display = "inline-block"
                   timerResumeBtn.style.display = "none";
@@ -369,10 +385,32 @@ function countCharacters() {
   characterCount.innerText = characters.length;
 }
 
+// 888888888
+// 8. Animations & Set Timeout
+const wordCountItems = document.getElementById('word-count-items');
+const sidebar = document.getElementById('sidebar');
+const navpanel = document.getElementById('navpanel');
+const demoContent = document.getElementsByClassName('demo-content')[0];
 
+function hideConsole() {
+    sidebar.style.opacity = 0;
+    navpanel.style.opacity = 0;
+    wordCountItems.style.opacity = 0;
+    textarea.style.border = "none";
+};
+function showConsole() {
+  sidebar.style.opacity = 1;
+  wordCountItems.style.opacity = 1;
+  textarea.style.border = "0.1em dashed black";
+}
 
-//Save functionality
-const saveBtn = document.getElementById('sv1');
+demoContent.addEventListener('mouseover', showConsole);
+demoContent.addEventListener('mouseout', hideConsole);
+navpanel.onmouseover = () => navpanel.style.opacity = 1;
+
+// 9999999999
+// 9. Save functionality
+const saveBtn = document.getElementById('sv2');
 
 saveBtn.onclick = function download(filename) {
   saveAsTextFile = document.createElement('a');

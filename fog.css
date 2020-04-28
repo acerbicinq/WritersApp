@@ -1,3 +1,59 @@
 .demo-modal-box {
   background: lightblue url('./img/fog.jpg') no-repeat scroll center/cover;
 }
+.navpanel-btn {
+  border: 0.1em solid #303030;
+  background-color: #303030;
+  color: white;
+}
+
+.demo-textarea {
+  border: 1px dashed black;
+}
+.demo-word-counter-item {
+  border-top: 0.1em solid black;
+  border-bottom: 0.1em solid black;
+}
+.demo-word-counter-btn {
+  border: 0.1em solid black;
+}
+.demo-sidebar input[type=button] {
+  background-color: #303030;
+  color: white;
+  font-size: 0.6em;
+}
+.demo-font-option, .demo-font-size-option, .demo-music-option {
+  border: none;
+}
+.demo-background-option {
+  border: 0.6em solid #303030;
+}
+.timer-btn {
+  background-color: #303030;
+  color: white;
+  font-weight: bold;
+}
+.demo-save-btn {
+  border: 0.1em solid black;
+  background-color: #c2c2a3;
+}
+.demo-share-btn {
+  border: 0.1em solid black;
+  background-color: #bfccd9;
+}
+.demo-note {
+  background-color: #303030;
+  padding: 0.5em 1em;
+}
+.demo-note-text, .demo-note-link {
+  color: white;
+  text-align: center;
+}
+.tooltip-text {
+  background-color: #f2f2f2;
+}
+.tooltip-text::before {
+  border-color: transparent transparent #f2f2f2 transparent;
+}
+
+/* STATES */
