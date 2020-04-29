@@ -2,3 +2,80 @@
   background: rgba(0, 0, 0, 0.7) url('./img/night.jpg') no-repeat scroll center/cover;
   background-blend-mode: multiply;
 }
+.navpanel-header {
+  color: white;
+}
+.navpanel-link {
+  color: white;
+}
+.navpanel-btn {
+  background-color: #1b262f;
+  color: white;
+}
+
+.demo-textarea {
+  border: 1px dashed white;
+  color: white;
+}
+.demo-word-counter-item {
+  border-top: 0.1em solid white;
+  border-bottom: 0.1em solid white;
+  color: white;
+}
+.demo-word-counter-btn {
+  border: 0.1em solid white;
+}
+.demo-sidebar input[type=button] {
+  background-color: #384f61;
+  color: white;
+}
+
+.demo-background-option {
+  border: 0.6em solid #384f61;
+}
+.demo-countdown {
+  color: white;
+}
+#minutesInput {
+  background-color: #bfccd9;
+}
+.timer-btn {
+  background-color: #1b262f;
+  color: white;
+}
+.demo-save-btn {
+  border: 0.1em solid black;
+  background-color: lightgray;
+}
+.demo-share-btn {
+  border: 0.1em solid black;
+  background-color: #bfccd9;
+}
+.demo-close-btn {
+  color: white;
+}
+.demo-note {
+  background-color: #384f61;
+}
+.demo-note-text, .demo-note-link {
+  color: #f2f2f2;
+  text-align: center;
+}
+.share-tooltip-text {
+  color: white;
+}
+.save-tooltip-text {
+  color: white;
+}
+.tooltip-text {
+  background-color: #384f61;
+  color: white;
+}
+.tooltip-text::before {
+  border-color: transparent transparent #384f61 transparent;
+}
+
+/* STATES */
+.demo-close-btn:hover {
+  background-color: #384f61;
+}

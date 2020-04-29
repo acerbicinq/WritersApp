@@ -184,7 +184,7 @@ a:hover {
   display: flex;
   flex-flow: column;
   padding: 2em;
-  border: 0.1em solid red;
+
 }
 .login-header {
   margin: 1.2em auto;
@@ -302,6 +302,7 @@ padding: 0.4em;
   height: 30px;
   width: 30px;
   margin: 0.3em auto;
+  font-size: 0.6em;
 }
 
 
@@ -320,6 +321,9 @@ padding: 0.4em;
 #bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
 #bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
 
+.demo-font-option, .demo-font-size-option, .demo-music-option {
+  border: none;
+}
 
 .demo-music-control, #pause {
   display: none;
@@ -333,10 +337,10 @@ padding: 0.4em;
   font-family: "libre_caslon_displayregular";
   margin: 0 3em;
 }
-
 .timer-btn {
   padding: 0.6em;
   width: 38%;
+  font-weight: bold;
 }
 #timerResumeBtn, #timerPauseBtn, #timer-sound {
   display: none;
@@ -360,6 +364,8 @@ padding: 0.4em;
   position: fixed;
   top: 15px;
   right: 35px;
+  padding: 8px 10px;
+  border-radius: 20%;
 }
 .demo-note {
   position: fixed;
@@ -367,6 +373,7 @@ padding: 0.4em;
   right: 25px;
   height: 40px;
   border-radius: 15%;
+  padding: 0.5em 1em;
 }
 .save-tooltip-text {
   margin-top: 0.5em;
@@ -422,6 +429,10 @@ padding: 0.4em;
 }
 .demo-note:hover {
   opacity: 1;
+}
+
+.demo-close-btn:hover {
+
 }
 
 .demo-font-option + .demo-font-option {

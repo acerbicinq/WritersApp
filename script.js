@@ -404,9 +404,7 @@ function showConsole() {
   textarea.style.border = "0.1em dashed black";
 }
 
-demoContent.addEventListener('mouseover', showConsole);
-demoContent.addEventListener('mouseout', hideConsole);
-navpanel.onmouseover = () => navpanel.style.opacity = 1;
+
 
 // 9999999999
 // 9. Save functionality

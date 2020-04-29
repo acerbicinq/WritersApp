@@ -2,3 +2,60 @@
   background: rgba(255, 255, 255, 0.5) url('./img/ocean.jpg') no-repeat scroll center/cover;
   background-blend-mode: overlay;
 }
+.navpanel-btn {
+  background-color: #8ec5c4;
+  color: black;
+}
+
+.demo-textarea {
+  border: 1px dashed black;
+}
+.demo-word-counter-item {
+  border-top: 0.1em solid black;
+  border-bottom: 0.1em solid black;
+}
+.demo-word-counter-btn {
+  border: 0.1em solid black;
+}
+.demo-sidebar input[type=button] {
+  background-color: #346564;
+  color: white;
+}
+
+.demo-background-option {
+  border: 0.6em solid #346564;
+}
+.timer-btn {
+  background-color: #8ec5c4;
+  color: black;
+}
+.demo-save-btn {
+  border: 0.1em solid white;
+  background-color: #ddeeed;
+}
+.demo-share-btn {
+  border: 0.1em solid white;
+  background-color: #8ec5c4;
+}
+.demo-close-btn {
+  color: black;
+}
+.demo-note {
+  background-color: #f2f2f2;
+  padding: 0.5em 1em;
+}
+.demo-note-text, .demo-note-link {
+  color: black;
+  text-align: center;
+}
+.tooltip-text {
+  background-color: #f2f2f2;
+}
+.tooltip-text::before {
+  border-color: transparent transparent #f2f2f2 transparent;
+}
+
+/* STATES */
+.demo-close-btn:hover {
+  background-color: #c0d4d3;
+}
