@@ -263,22 +263,51 @@ padding: 0.4em;
 .demo-content {
   display: flex;
   justify-content: center;
-
-}
-.demo-movable-div {
-/*All 3 panels should be able to move with this */
+  padding: 8px;
+  position: absolute;
 }
 .demo-resizable-div {
-/* envelopes textarea and word counter */
+  padding: 10px;
+  cursor: move;
+}
+.resizable {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  z-index: 3;
+
+}
+
+.resizable.nw {
+  top: 16px;
+  left: 208px;
+  cursor: nwse-resize;
+}
+.resizable.ne {
+  top: 16px;
+  right: 301px;
+  cursor: nesw-resize;
+}
+.resizable.sw {
+  bottom: 120px;
+  left: 208px;
+  cursor: nesw-resize;
+}
+.resizable.se {
+  bottom: 120px;
+  right: 301px;
+  cursor: nwse-resize;
 }
 .demo-textarea {
+  padding: 20px;
+  background-color: transparent;
+  font-family: "libre_caslon_displayregular";
+  resize: none;
   min-width: 850px;
   min-height: 600px;
   max-height: 90vh;
   max-width: 1800px;
-  padding: 20px;
-  background-color: transparent;
-  font-family: "libre_caslon_displayregular";
 }
 .demo-word-counter-items {
   display: flex;
@@ -307,13 +336,11 @@ padding: 0.4em;
 
 
 /* Demo Font Options */
-
-
-#ltr1 {font-family: "libre_caslon_displayregular";}
-#ltr2 {font-family: "pistararegular";}
-#ltr3 {font-family: "nimbus_monoregular";}
-#ltr4 {font-family: "alluraregular";}
-#ltr5 {font-family: "darkwomanregular";}
+#ltr1 {font-family: "libre_caslon_displayregular", "Times New Roman", serif;}
+#ltr2 {font-family: "pistararegular", arial, sans-serif;}
+#ltr3 {font-family: "nimbus_monoregular", monospace;}
+#ltr4 {font-family: "montezregular", cursive;}
+#ltr5 {font-family: "darkwomanregular", fantasy;}
 
 #bg1 {background: url('../img/fog.jpg') center/cover no-repeat;}
 #bg2 {background: url('../img/ocean.jpg') center/cover no-repeat;}

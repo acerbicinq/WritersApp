@@ -2,17 +2,18 @@
 // 1. Modal Functionality
 // 2. Theme Change Functionality
 // 3. Font Size Incrementing
-// 4. Font Styling
+// 4. Change Font Styling Functionality
 // 5. Local Music Play/Display Functionality
 // 6. Timer Functionality
 // 7. Word & Character Counter Functionality
-// 8. Console Display/Hide Animations with setTimeOut & Event Handlers
-// 9. Save Option Functionality
-// ?. Move/Rezise Text Area
+// 8. Save Option Functionality
+// 9. Moveable and Resizable Console Functionality
+// ?. Console Display/Hide Animations with setTimeOut & Event Handlers
 // ?. Notes on Implementing Accessibility Functionality with for() loops.
 
 
-// 1. Modal & Modal Open Variables
+// 1111111
+// 1. Modal Functionality
 const demoModal = document.getElementById('demo');
 const loginModal = document.getElementById('login');
 const openLoginModal = document.getElementById('open-login');
@@ -40,7 +41,7 @@ openDemoModal.onclick = () => {
 closeButton.onclick = () => demoModal.style.display = "none";
 
 // 2222222222
-// 2. Background Changes
+// 2. Theme Change Functionality
 const bgBtn1 = document.getElementById('bg1');
 const bgBtn2 = document.getElementById('bg2');
 const bgBtn3 = document.getElementById('bg3');
@@ -94,7 +95,7 @@ szBtn3.onclick = () => textarea.style.fontSize = "1.3em";
 szBtn4.onclick = () => textarea.style.fontSize = "1.4em";
 
 // 44444444
-// 4. Font Styling
+// 4. Change Font Styling Functionality
 const fontBtn1 = document.getElementById('ltr1');
 const fontBtn2 = document.getElementById('ltr2');
 const fontBtn3 = document.getElementById('ltr3');
@@ -116,7 +117,7 @@ fontBtn5.onclick = () => {
   textarea.style.letterSpacing = "0.2em";
 }
 // 5555555
-// 5. Music Play/Display
+// 5. Local Music Play/Display Functionality
 const playMusicBtn = document.getElementById('play');
 const pauseMusicBtn = document.getElementById('pause');
 
@@ -215,7 +216,7 @@ musicBtn4.onclick = () => {
 
 
 // 6666666
-// 6. Timer!
+// 6. Timer Functionality
 const countdown = document.getElementById('countdown');
 const minutesInput = document.getElementById('minutesInput');
 const timerStartBtn = document.getElementById('timerStartBtn');
@@ -351,7 +352,7 @@ function startTimer() {
 
 
 // 77777777777
-// 7. Word Counter & Character Counter
+// 7. Word & Character Counter Functionality
 const wordCount = document.getElementById('wordCount');
 textarea.addEventListener('keydown', countWords);
 textarea.addEventListener('keyup', countWords);
@@ -386,28 +387,7 @@ function countCharacters() {
 }
 
 // 888888888
-// 8. Animations & Set Timeout
-const wordCountItems = document.getElementById('word-count-items');
-const sidebar = document.getElementById('sidebar');
-const navpanel = document.getElementById('navpanel');
-const demoContent = document.getElementsByClassName('demo-content')[0];
-
-function hideConsole() {
-    sidebar.style.opacity = 0;
-    navpanel.style.opacity = 0;
-    wordCountItems.style.opacity = 0;
-    textarea.style.border = "none";
-};
-function showConsole() {
-  sidebar.style.opacity = 1;
-  wordCountItems.style.opacity = 1;
-  textarea.style.border = "0.1em dashed black";
-}
-
-
-
-// 9999999999
-// 9. Save functionality
+// 8. Save Option Functionality
 const saveBtn = document.getElementById('sv2');
 
 saveBtn.onclick = function download(filename) {
@@ -421,6 +401,114 @@ saveBtn.onclick = function download(filename) {
   document.body.removeChild(saveAsTextFile);
 }
 
+
+
+
+
+// 9999999999
+// 9. Moveable and Resizable Console Functionality
+
+const moveableDiv = document.querySelector('.demo-content');
+let isResizing = false;
+let isWriting = false;
+
+textarea.onfocus = () => {
+  isWriting = true;
+}
+
+moveableDiv.addEventListener("mousedown", mousedown);
+function mousedown(e) {
+  window.addEventListener("mousemove", mousemove);
+  window.addEventListener("mouseup", mouseup);
+
+  let prevX = e.clientX;
+  let prevY = e.clientY;
+
+  function mousemove(e) {
+    if (!isResizing || !isWriting) {
+    let newX = prevX - e.clientX;
+    let newY = prevY - e.clientY;
+
+    const rect = moveableDiv.getBoundingClientRect();
+    moveableDiv.style.left = rect.left - newX + "px";
+    moveableDiv.style.top = rect.top - newY + "px";
+
+    prevX = e.clientX;
+    prevY = e.clientY;
+    }
+  }
+  function mouseup() {
+    window.removeEventListener("mousemove", mousemove);
+    window.removeEventListener("mouseup", mouseup);
+  }
+}
+
+const resizers = document.querySelectorAll(".resizable");
+let currentResizer;
+
+for(let resizer of resizers) {
+  resizer.addEventListener("mousedown", mousedown);
+
+  function mousedown(e) {
+    currentResizer = e.target;
+    isResizing = true;
+
+    let prevX = e.clientX;
+    let prevY = e.clientY;
+
+    window.addEventListener("mousemove", mousemove);
+    window.addEventListener("mouseup", mouseup);
+    function mousemove(e) {
+      const rect = textarea.getBoundingClientRect();
+
+      if (currentResizer.classList.contains('se')) {
+        textarea.style.width = rect.width - (prevX - e.clientX) + "px";
+        textarea.style.height = rect.height - (prevY - e.clientY) + "px";
+      } else if (currentResizer.classList.contains('sw')) {
+        textarea.style.width = rect.width + (prevX - e.clientX) + "px";
+        textarea.style.height = rect.height - (prevY - e.clientY) + "px";
+        textarea.style.left = rect.left - (prevX - e.clientX) + "px";
+      } else if (currentResizer.classList.contains('ne')) {
+        textarea.style.width = rect.width - (prevX - e.clientX) + "px";
+        textarea.style.height = rect.height + (prevY - e.clientY) + "px";
+        textarea.style.top = rect.top - (prevY - e.clientY) + "px";
+      } else if (currentResizer.classList.contains('nw')) {
+        textarea.style.width = rect.width + (prevX - e.clientX) + "px";
+        textarea.style.height = rect.height + (prevY - e.clientY) + "px";
+        textarea.style.top = rect.top - (prevY - e.clientY) + "px";
+        textarea.style.left = rect.left - (prevX - e.clientX) + "px";
+      }
+      prevX = e.clientX;
+      prevY = e.clientY;
+    }
+    function mouseup() {
+      window.removeEventListener("mousemove", mousemove);
+      window.removeEventListener("mouseup", mouseup);
+      isResizing = false;
+    }
+  }
+};
+
+
+// Animations & Set Timeout
+/*
+const wordCountItems = document.getElementById('word-count-items');
+const sidebar = document.getElementById('sidebar');
+const navpanel = document.getElementById('navpanel');
+
+
+function hideConsole() {
+    sidebar.style.opacity = 0;
+    navpanel.style.opacity = 0;
+    wordCountItems.style.opacity = 0;
+    textarea.style.border = "none";
+};
+function showConsole() {
+  sidebar.style.opacity = 1;
+  wordCountItems.style.opacity = 1;
+  textarea.style.border = "0.1em dashed black";
+}
+*/
 
 
 //// ?. Notes on Implementing Accessibility Functionality with for() loops.
