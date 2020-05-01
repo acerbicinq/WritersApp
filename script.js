@@ -419,9 +419,17 @@ const moveableDiv = document.querySelector('.demo-content');
 let isResizing = false;
 let isWriting = false;
 
-textarea.onfocus = () => {
-  isWriting = true;
+textarea.addEventListener("mousedown", writing);
+textarea.addEventListener("mouseup", notWriting);
+function writing(e) {
+    isWriting = true;
+    console.log('Totally writing!');
 }
+function notWriting() {
+  isWriting = false;
+  console.log('Not writing anymore.');
+}
+
 
 moveableDiv.addEventListener("mousedown", mousedown);
 function mousedown(e) {
@@ -432,7 +440,7 @@ function mousedown(e) {
   let prevY = e.clientY;
 
   function mousemove(e) {
-    if (!isResizing || !isWriting) {
+    if (!isResizing && !isWriting) {
     let newX = prevX - e.clientX;
     let newY = prevY - e.clientY;
 
@@ -498,24 +506,26 @@ for(let resizer of resizers) {
 
 
 // Animations & Set Timeout
-/*
+
 const wordCountItems = document.getElementById('word-count-items');
 const sidebar = document.getElementById('sidebar');
 const navpanel = document.getElementById('navpanel');
 
-
+moveableDiv.addEventListener("mouseover", showConsole);
+moveableDiv.addEventListener("mouseleave", hideConsole);
+navpanel.onmouseover = () => navpanel.style.opacity = 1;
 function hideConsole() {
     sidebar.style.opacity = 0;
     navpanel.style.opacity = 0;
     wordCountItems.style.opacity = 0;
-    textarea.style.border = "none";
+    console.log("I am hidden.")
 };
 function showConsole() {
   sidebar.style.opacity = 1;
   wordCountItems.style.opacity = 1;
-  textarea.style.border = "0.1em dashed black";
+  console.log("I am visible!");
 }
-*/
+
 
 
 //// ?. Notes on Implementing Accessibility Functionality with for() loops.

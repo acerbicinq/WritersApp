@@ -119,10 +119,7 @@ a:hover {
 .home-header {
   margin: 0.8em auto;
   font-size: 5em;
-  font-family: "montezregular";
-}
-.home-navbar {
-
+  font-family: "libre_caslon_displayregular";
 }
 
 .home-navbar-list-items {
@@ -174,11 +171,8 @@ a:hover {
 }
 .content-header {
   font-size: 1.8em;
-
 }
-.content-subheader {
 
-}
 .content-paragraph:first-of-type {
   text-align: center;
 }
@@ -186,6 +180,7 @@ a:hover {
   font-size: 1.2em;
   margin-bottom: 1em;
 }
+
 
 
 .login-modal-box {
@@ -238,7 +233,6 @@ a:hover {
 .login-btn.signup {
   background-color: #669999;
 }
-
 .no-login {
   text-align: center;
   font-style: italic;
@@ -270,7 +264,6 @@ padding: 0.4em;
 .login-forgot-psw-text {
   margin-left: 45%;
 }
-
 #login {
   display:none;
 }
@@ -323,9 +316,7 @@ padding: 0.4em;
   height: 15px;
   background-color: transparent;
   z-index: 3;
-
 }
-
 .resizable.nw {
   top: 16px;
   left: 208px;
@@ -380,7 +371,12 @@ padding: 0.4em;
   margin: 0.3em auto;
   font-size: 0.6em;
 }
-
+.demo-font-option, .demo-font-size-option, .demo-music-option {
+  border: none;
+}
+.demo-music-control, #pause {
+  display: none;
+}
 
 /* Demo Font Options */
 #ltr1 {font-family: "libre_caslon_displayregular", "Times New Roman", serif;}
@@ -389,19 +385,14 @@ padding: 0.4em;
 #ltr4 {font-family: "montezregular", cursive;}
 #ltr5 {font-family: "darkwomanregular", fantasy;}
 
+/* Demo Background Options */
 #bg1 {background: url('../img/fog.jpg') center/cover no-repeat;}
 #bg2 {background: url('../img/ocean.jpg') center/cover no-repeat;}
 #bg3 {background: url('../img/sunset.jpg') center/cover no-repeat;}
 #bg4 {background: url('../img/night.jpg') center/cover no-repeat;}
 #bg5 {background: url('../img/wood.jpg') center/cover no-repeat;}
 
-.demo-font-option, .demo-font-size-option, .demo-music-option {
-  border: none;
-}
 
-.demo-music-control, #pause {
-  display: none;
-}
 .demo-timer {
   margin: 2em auto;
 }
