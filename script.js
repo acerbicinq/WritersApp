@@ -16,21 +16,34 @@
 // 1. Modal Functionality
 const demoModal = document.getElementById('demo');
 const loginModal = document.getElementById('login');
+const signupModal = document.getElementById('signup');
 const openLoginModal = document.getElementById('open-login');
 const openSignupModal = document.getElementById('open-signup');
 const openDemoModal = document.getElementById('open-demo');
 const closeButton = document.getElementById('demo-close');
-const cancelButton = document.getElementById('cancel-login');
+const cancelLogin = document.getElementById('cancel-login');
+const cancelSignup = document.getElementById('cancel-signup');
+const loginBtn = document.querySelector('.login-btn');
+const signupBtn = document.querySelector('.signup');
+const noLoginMsg = document.querySelector('.no-login');
+const noSignupMsg = document.querySelector('.no-signup');
 
 //Login Modal Functionality
 openLoginModal.onclick = () => loginModal.style.display = "block";
-openSignupModal.onclick = () => loginModal.style.display = "block";
-cancelButton.onclick = () => loginModal.style.display = "none";
+openSignupModal.onclick = () => signupModal.style.display = "block";
+cancelLogin.onclick = () => loginModal.style.display = "none";
+cancelSignup.onclick = () => signupModal.style.display = "none";
+
 window.onclick = function(e) {
-  if (e.target == loginModal) {
+  if (e.target == signupModal) {
+    signupModal.style.display = "none";
+  } else if (e.target == loginModal) {
     loginModal.style.display = "none";
   }
 }
+
+loginBtn.onclick = () => noLoginMsg.innerText = "Sorry, login and signup are currently unavailable!";
+signupBtn.onclick = () => noSignupMsg.innerText = "Sorry, login and signup are currently unavailable!";
 
 //Demo Modal Functionality
 const textarea = document.getElementById('console-text');
@@ -66,13 +79,11 @@ bgBtn3.onclick = () => {
   note.href = "https://unsplash.com/@paul_nic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
   note.innerText = "Paolo Nicolello";
 }
-
 bgBtn4.onclick = () => {
   defaultTheme.href = "./night.css";
   note.href = "https://unsplash.com/@verstuyftj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
   note.innerText = "Jonas Verstuyft";
 };
-
 bgBtn5.onclick = () => {
   defaultTheme.href = "./wood.css";
   note.href = "https://unsplash.com/@davidboca?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
@@ -402,12 +413,8 @@ saveBtn.onclick = function download(filename) {
 }
 
 
-
-
-
 // 9999999999
 // 9. Moveable and Resizable Console Functionality
-
 const moveableDiv = document.querySelector('.demo-content');
 let isResizing = false;
 let isWriting = false;

@@ -80,7 +80,7 @@ a:hover {
 #navbar {
   width: 100%;
   margin-bottom: 2em;
-  background-color: #f2f2f2;
+  background-color: #bfccd9;
 }
 #article {
   padding: 3em;
@@ -91,7 +91,7 @@ a:hover {
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #f2f2f2;
+  background-color: #bfccd9;
 }
 #navpanel {
   float: left;
@@ -105,7 +105,7 @@ a:hover {
   min-width: 250px;
 }
 .l-modal {
-  display: block;
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -117,7 +117,9 @@ a:hover {
 
 /* MODULES */
 .home-header {
-  margin: 1.5em auto;
+  margin: 0.8em auto;
+  font-size: 5em;
+  font-family: "montezregular";
 }
 .home-navbar {
 
@@ -125,49 +127,63 @@ a:hover {
 
 .home-navbar-list-items {
   display: flex;
-  justify-content: flex-end;
-  padding: 2em;
-  padding-right: 10em;
+  justify-content: center;
+  padding: 1.4em;
+  font-size: 1.2em;
 }
 .home-navbar-list-item {
   padding: 0.3em;
   font-size: 1.4em;
   display: inline-block;
+  cursor: pointer;
+}
+.home-navbar-list-item#open-demo {
+  border: 0.1em solid #384f61;
 }
 
-.home-footer {
-
-}
 .home-footer-contact-box {
   text-align: center;
 }
-.home-footer-soc-btns {
-  padding: 0.4em;
-}
-.home-footer-soc-btn {
-  display: inline-block;
 
-}
 .home-footer-contact-btns {
-
+  margin-top: 1em;
 }
 .home-footer-contact-btn {
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   padding: 0.4em;
+  border: 0.1em solid black;
+  width: 8%;
+}
+.footer-svg {
+  height: 12%;
+  width: 12%;
+  margin-right: 0.4em;
+}
+.footer-link {
+  padding: 0.2em;
+  color: black;
 }
 
-
-
 .content-box {
-  text-align: center;
   height: 60vh;
   width: 50%;
   margin: 0 auto;
+  text-align: center;
 }
 .content-header {
+  font-size: 1.8em;
 
 }
+.content-subheader {
+
+}
+.content-paragraph:first-of-type {
+  text-align: center;
+}
 .content-paragraph {
+  font-size: 1.2em;
   margin-bottom: 1em;
 }
 
@@ -180,19 +196,26 @@ a:hover {
   left: 25%;
 }
 .login-modal-content {
-  background-color: lightblue;
+  background-color: #cce6ff;
   display: flex;
   flex-flow: column;
   padding: 2em;
 
 }
+.signup-modal-content {
+  background-color: #e0ebeb;
+  display: flex;
+  flex-flow: column;
+  padding: 2em;
+}
+
 .login-header {
   margin: 1.2em auto;
   font-size: 32px;
 }
 .login-photo {
-  height: 30%;
-  width: 20%;
+  height: 20%;
+  width: 30%;
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -206,6 +229,27 @@ a:hover {
   width: 100%;
   padding: 1em;
   margin-bottom: 1.3em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.login-btn.login {
+  background-color: #3399ff;
+}
+.login-btn.signup {
+  background-color: #669999;
+}
+
+.no-login {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1em;
+}
+.no-signup {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1em;
 }
 .login-checkbox {
 border: 0.1em solid black;
@@ -221,6 +265,7 @@ padding: 0.4em;
   width: 20%;
   padding: 1em;
   margin-left: 10%;
+  background-color: #ffad99;
 }
 .login-forgot-psw-text {
   margin-left: 45%;
@@ -265,6 +310,8 @@ padding: 0.4em;
   justify-content: center;
   padding: 8px;
   position: absolute;
+  top: 200px;
+  left: 550px;
 }
 .demo-resizable-div {
   padding: 10px;
