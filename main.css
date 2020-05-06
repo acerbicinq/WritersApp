@@ -80,10 +80,11 @@ a:hover {
 #navbar {
   width: 100%;
   margin-bottom: 2em;
-  background-color: #bfccd9;
+  background-color: #A2CDC3;
 }
 #article {
   padding: 3em;
+
 }
 .l-footer {
   width: 100%;
@@ -91,7 +92,7 @@ a:hover {
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #bfccd9;
+  background-color: #A2CDC3;
 }
 #navpanel {
   float: left;
@@ -118,24 +119,30 @@ a:hover {
 /* MODULES */
 .home-header {
   margin: 0.8em auto;
-  font-size: 5em;
-  font-family: "libre_caslon_displayregular";
+  font-size: 6em;
+  font-family: "montezregular", cursive;
+  text-decoration: underline;
+  color: #3E3236;
 }
+
+
 
 .home-navbar-list-items {
   display: flex;
   justify-content: center;
   padding: 1.4em;
-  font-size: 1.2em;
+
 }
 .home-navbar-list-item {
   padding: 0.3em;
-  font-size: 1.4em;
+  font-size: 1.7em;
   display: inline-block;
   cursor: pointer;
 }
 .home-navbar-list-item#open-demo {
   border: 0.1em solid #384f61;
+  background-color: #648C82;
+  color: white;
 }
 
 .home-footer-contact-box {
@@ -151,30 +158,31 @@ a:hover {
   justify-content: center;
   padding: 0.4em;
   border: 0.1em solid black;
+  background-color: #648C82;
   width: 8%;
 }
 .footer-svg {
   height: 12%;
   width: 12%;
   margin-right: 0.4em;
+  fill: white;
 }
 .footer-link {
   padding: 0.2em;
-  color: black;
+  color: white;
 }
 
 .content-box {
   height: 60vh;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   text-align: center;
 }
 .content-header {
-  font-size: 1.8em;
+  font-size: 2em;
 }
-
-.content-paragraph:first-of-type {
-  text-align: center;
+.content-header:nth-of-type(2) {
+  margin-top: 2em;
 }
 .content-paragraph {
   font-size: 1.2em;
@@ -191,14 +199,14 @@ a:hover {
   left: 25%;
 }
 .login-modal-content {
-  background-color: #cce6ff;
+  background-color: #A2CDC3;
   display: flex;
   flex-flow: column;
   padding: 2em;
 
 }
 .signup-modal-content {
-  background-color: #e0ebeb;
+  background-color: #ffd6cc;
   display: flex;
   flex-flow: column;
   padding: 2em;
@@ -228,10 +236,14 @@ a:hover {
   font-size: 0.9em;
 }
 .login-btn.login {
-  background-color: #3399ff;
+  background-color: #242421;
+  color: white;
+  text-transform: uppercase;
 }
 .login-btn.signup {
-  background-color: #669999;
+  background-color: #3E3236;
+  color: white;
+  text-transform: uppercase;
 }
 .no-login {
   text-align: center;
@@ -260,6 +272,7 @@ padding: 0.4em;
   padding: 1em;
   margin-left: 10%;
   background-color: #ffad99;
+  font-weight: bold;
 }
 .login-forgot-psw-text {
   margin-left: 45%;
@@ -267,6 +280,8 @@ padding: 0.4em;
 #login {
   display:none;
 }
+
+
 
 
 /* Demo Module */
@@ -466,10 +481,25 @@ padding: 0.4em;
 }
 
 /* STATES */
-.home-navbar-list-item:hover {
+.home-navbar-list-item:hover,
+.home-navbar-list-item:focus {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.home-navbar-list-item#open-demo:hover,
+.home-navbar-list-item#open-demo:focus-within {
+  box-shadow: 5px 5px 5px grey;
+}
+
+.home-footer-contact-btn:hover,
+.home-footer-contact-btn:focus-within {
+  background-color: #252E2C;
+  box-shadow: 5px 5px 5px grey;
+}
+
+
+
 .tooltip-text,
 .tooltip-text::before,
 .share-tooltip-text,
@@ -497,7 +527,7 @@ padding: 0.4em;
 }
 
 .demo-close-btn:hover {
-
+  cursor: pointer;
 }
 
 .demo-font-option + .demo-font-option {
@@ -553,4 +583,146 @@ padding: 0.4em;
 .demo-music-options:hover
 .demo-music-option:nth-child(n+3):hover {
   opacity: 1;
+}
+
+/* Media Queries */
+@media screen and (max-width: 360px) {
+  .home-header {
+    font-size: 4em;
+  }
+  .home-navbar-list-items {
+    font-size: 0.8em;
+  }
+  .content-box {
+    width: 100%;
+    height: 100%;
+  }
+  .content-header {
+    font-size: 1.6em;
+  }
+  .l-footer {
+    width: 100%;
+    padding: 2em;
+    position: static;
+  }
+  .home-footer-contact-btns {
+    display: block;
+    margin: 1em auto;
+  }
+  .home-footer-contact-btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .login-modal-content {
+    height: 700px;
+    width: 340px;
+    transform: translate(-80px, -60px);
+  }
+  .signup-modal-content {
+    height: 700px;
+    width: 340px;
+    transform: translate(-80px, -60px);
+  }
+  .login-header {
+    text-align: center;
+  }
+  .login-photo {
+    height: 50%;
+    width: 50%;
+  }
+  .login-cancel-btn {
+    width: 40%;
+  }
+  .login-forgot-psw-text {
+    margin-left: 5%;
+  }
+  .no-login {
+    margin: 0.8em auto;
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 460px) {
+  .home-header {
+    font-size: 4em;
+  }
+  .home-navbar-list-items {
+    font-size: 0.8em;
+  }
+  .content-box {
+    width: 100%;
+    height: 100%;
+  }
+  .content-header {
+    font-size: 1.6em;
+  }
+  .l-footer {
+    width: 100%;
+    padding: 2em;
+    position: static;
+  }
+  .home-footer-contact-btns {
+    display: block;
+    margin: 1em auto;
+  }
+  .home-footer-contact-btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .login-modal-content {
+    height: 700px;
+    width: 340px;
+    transform: translate(-80px, -60px);
+  }
+  .signup-modal-content {
+    height: 700px;
+    width: 340px;
+    transform: translate(-80px, -60px);
+  }
+  .login-header {
+    text-align: center;
+  }
+  .login-photo {
+    height: 50%;
+    width: 50%;
+  }
+  .login-cancel-btn {
+    width: 40%;
+  }
+  .login-forgot-psw-text {
+    margin-left: 5%;
+  }
+  .no-login {
+    margin: 0.8em auto;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .l-footer {
+    position: static;
+    margin-top: 1em;
+  }
+  .home-footer-contact-btn {
+    width: 30%;
+  }
+  .login-photo {
+    height: 50%;
+    width: 50%;
+  }
+  .login-cancel-btn {
+    width: 40%;
+    margin-left: 2%;
+  }
+  .login-forgot-psw-text {
+    margin-left: 10%;
+  }
+  .no-login {
+    margin: 1.5em auto;
+  }
+  .no-signup {
+    margin: 1.5em auto;
+  }
 }

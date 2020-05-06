@@ -8,7 +8,7 @@
 // 7. Word & Character Counter Functionality
 // 8. Save Option Functionality
 // 9. Moveable and Resizable Console Functionality
-// ?. Console Display/Hide Animations with setTimeOut & Event Handlers
+// 10. Console Display/Hide
 // ?. Notes on Implementing Accessibility Functionality with for() loops.
 
 
@@ -19,7 +19,7 @@ const loginModal = document.getElementById('login');
 const signupModal = document.getElementById('signup');
 const openLoginModal = document.getElementById('open-login');
 const openSignupModal = document.getElementById('open-signup');
-const openDemoModal = document.getElementById('open-demo');
+const demoModalLink = document.getElementById('open-demo');
 const closeButton = document.getElementById('demo-close');
 const cancelLogin = document.getElementById('cancel-login');
 const cancelSignup = document.getElementById('cancel-signup');
@@ -47,10 +47,16 @@ signupBtn.onclick = () => noSignupMsg.innerText = "Sorry, login and signup are c
 
 //Demo Modal Functionality
 const textarea = document.getElementById('console-text');
-openDemoModal.onclick = () => {
+
+function openDemoModal() {
+  if (screen.width < 1000) {
+    alert("Demo best viewed on a desktop or laptop.")
+  } else {
   demoModal.style.display = "block";
   textarea.focus();
-};
+  }
+}
+demoModalLink.addEventListener("click", openDemoModal);
 closeButton.onclick = () => demoModal.style.display = "none";
 
 // 2222222222
@@ -423,11 +429,9 @@ textarea.addEventListener("mousedown", writing);
 textarea.addEventListener("mouseup", notWriting);
 function writing(e) {
     isWriting = true;
-    console.log('Totally writing!');
 }
 function notWriting() {
   isWriting = false;
-  console.log('Not writing anymore.');
 }
 
 
@@ -504,8 +508,8 @@ for(let resizer of resizers) {
   }
 };
 
-
-// Animations & Set Timeout
+// 101010101010
+// 10. Console Display/Hide
 
 const wordCountItems = document.getElementById('word-count-items');
 const sidebar = document.getElementById('sidebar');
@@ -518,12 +522,10 @@ function hideConsole() {
     sidebar.style.opacity = 0;
     navpanel.style.opacity = 0;
     wordCountItems.style.opacity = 0;
-    console.log("I am hidden.")
 };
 function showConsole() {
   sidebar.style.opacity = 1;
   wordCountItems.style.opacity = 1;
-  console.log("I am visible!");
 }
 
 
